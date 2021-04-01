@@ -115,8 +115,8 @@ void SetPositionPIDEnable(PPositionPIDControl_Struct pPositionPID,float isEnable
 *************************************************************/
 void PositionPIDPrintf(PPositionPIDControl_Struct pPositionPID)
 {
-	printf("2:%f\r\n",pPositionPID->pPID.pre);
-	printf("3:%f\r\n",pPositionPID->pPID.tar);
+	printf("5:%f\r\n",pPositionPID->pPID.pre);
+	printf("6:%f\r\n",pPositionPID->pPID.tar);
 }
 
 

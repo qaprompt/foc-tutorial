@@ -43,6 +43,7 @@
 "odrive\focconfig.o"
 "odrive\drv8301config.o"
 "odrive\speedpidconfig.o"
+"odrive\positionpidconfig.o"
 "odrive\foc.o"
 "odrive\svpwm.o"
 "odrive\drv8301.o"

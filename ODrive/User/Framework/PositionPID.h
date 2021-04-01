@@ -14,7 +14,7 @@
 #define __PositionPID_H__
 #include "stdint.h"
 
-extern volatile uint32_t gSpeedPID_TimeCNT;
+extern volatile uint32_t gPositionPID_TimeCNT;
 
 
 /******************************************************
@@ -54,7 +54,7 @@ typedef PositionPIDControl_Struct *PPositionPIDControl_Struct;
 ** Function name:       POSITION_PID_CONTROL_EXPORT
 ** Descriptions:        声明一个位置控制对象
 ** Input parameters:    x:对象名字
-**                      xCycle：PID控制周期
+**                      xCycle：PID控制周期 单位秒
 **                      xGetMotorPrePosition：获取实际位置
 **                      xSetMotorSpeed：设置电流输出
 ** Output parameters:   None
@@ -62,20 +62,20 @@ typedef PositionPIDControl_Struct *PPositionPIDControl_Struct;
 ** Remarks:             None
 *************************************************************/
 #define POSITION_PID_CONTROL_EXPORT(x,xCycle,xOutMax,xGetMotorPrePosition,xSetMotorSpeed)           \
-POSITIONPIDControl_Struct x = {                                                                    \
+PositionPIDControl_Struct x = {                                                                    \
     .isEnable = 0,                                                                              \
     .sysTimer = 0,                                                                              \
-    .sPID.kp = 0,                                                                               \
-    .sPID.kd = 0,                                                                               \
-    .sPID.ki = 0,                                                                               \
-    .sPID.tar = 0,                                                                              \
-    .sPID.pre = 0,                                                                              \
-    .sPID.bais = 0,                                                                             \
-    .sPID.last_bias = 0,                                                                        \
-    .sPID.err = 0,                                                                              \
-    .sPID.out = 0,                                                                              \
-    .sPID.outMax = xOutMax,                                                                     \
-    .sPID.cycle = xCycle,                                                                       \
+    .pPID.kp = 0,                                                                               \
+    .pPID.kd = 0,                                                                               \
+    .pPID.ki = 0,                                                                               \
+    .pPID.tar = 0,                                                                              \
+    .pPID.pre = 0,                                                                              \
+    .pPID.bais = 0,                                                                             \
+    .pPID.last_bias = 0,                                                                        \
+    .pPID.err = 0,                                                                              \
+    .pPID.out = 0,                                                                              \
+    .pPID.outMax = xOutMax,                                                                     \
+    .pPID.cycle = xCycle,                                                                       \
     .GetPrePosition = xGetMotorPrePosition,                                                     \
     .SetMotorSpeed = xSetMotorSpeed,                                                            \
 };

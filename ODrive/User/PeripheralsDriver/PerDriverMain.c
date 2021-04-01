@@ -6,6 +6,7 @@
 #include "FOCConfig.h"
 #include "DRV8301Config.h"
 #include "SpeedPIDConfig.h"
+#include "PositionPIDConfig.h"
 /*************************************************************
 ** Function name:      PerDriverMain_Init
 ** Descriptions:       外设初始化
@@ -21,6 +22,7 @@ void PerDriverMain_Init(void)
 	//DRV8301Config_Init();//FUCK I Can NOT Commit With DRV8301
 	FOCConfig_Init();
 	SpeedPIDConfig_Init();
+	PositionPIDConfig_Init();
 }
 
 /*************************************************************
@@ -39,20 +41,26 @@ void PerDriverMain_Loop(void)
 	RUN_BY_LIMIT_BLOCK(10,
 		//FOCConfig_Printf();
 		SpeedPIDConfig_Printf();
+		PositionPIDConfig_Printf();
 	)
 	
 	//改变转速
 	RUN_BY_LIMIT_BLOCK(4000,
 		if (debugFlag == 0) {
 			debugFlag = 1;
-			SetSpeedPIDConfigTarSpeed(40.0f);
+			//SetSpeedPIDConfigTarSpeed(0.0f);
+			SetPositionPIDConfigTarPosition(180.0);
 		} else if (debugFlag == 1){
 			debugFlag = 0;
-			SetSpeedPIDConfigTarSpeed(20.0f);
+			//SetSpeedPIDConfigTarSpeed(0.0f);
+			SetPositionPIDConfigTarPosition(180.0);
 		}
 	)
+	//位置闭环
+	PositionPIDConfig_Loop();
 	//速度闭环
 	SpeedPIDConfig_Loop();
+	
 }
 
 

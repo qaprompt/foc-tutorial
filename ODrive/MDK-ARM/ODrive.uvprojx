@@ -1024,6 +1024,16 @@
               <FileType>5</FileType>
               <FilePath>..\User\PeripheralsDriver\SpeedPIDConfig.h</FilePath>
             </File>
+            <File>
+              <FileName>PositionPIDConfig.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\PeripheralsDriver\PositionPIDConfig.c</FilePath>
+            </File>
+            <File>
+              <FileName>PositionPIDConfig.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\PeripheralsDriver\PositionPIDConfig.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
