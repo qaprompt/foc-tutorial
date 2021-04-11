@@ -31,7 +31,7 @@ POSITION_PID_CONTROL_EXPORT(gPositionPID,0.005,100.0,GetMotorPosition,SetMotorPo
 void PositionPIDConfig_Init(void)
 {
     SetPositionPIDEnable(&gPositionPID,1);
-    SetPositionPIDParams(&gPositionPID,0.05f,0.0f,0.03f);
+    SetPositionPIDParams(&gPositionPID,0.04f,0.0f,0.018f);
     SetPositionPIDTar(&gPositionPID,0.0f);
 }
 

@@ -4,7 +4,7 @@
 #include "main.h"
 
 #define CNTZERO 10000
-#define ENCODERPLUSE 4000
+#define ENCODERPLUSE 8192
 
 
 extern TIM_HandleTypeDef htim3;

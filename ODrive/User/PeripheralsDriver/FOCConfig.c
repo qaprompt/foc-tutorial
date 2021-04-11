@@ -12,8 +12,8 @@
 #include "main.h"
 
 #define M_OUTMAX  12.0f * 0.577f
-#define M_KP  0.0001f
-#define M_KI  0.00005f
+#define M_KP  0.00004f
+#define M_KI  0.00002f
 #define M_KD  0.0f
 
 
@@ -30,9 +30,9 @@ static void MotorAngleCalibration(void)
 	//1.使能电机
 	SetMotorEnable(1);
 	//2.电机旋转至a轴
-	SetTIM1Channel1HighLeaveTime_us(52);
-	SetTIM1Channel2HighLeaveTime_us(48);
-	SetTIM1Channel3HighLeaveTime_us(48);
+	SetTIM1Channel1HighLeaveTime_us(60);
+	SetTIM1Channel2HighLeaveTime_us(40);
+	SetTIM1Channel3HighLeaveTime_us(40);
 	HAL_Delay(500);
 	//3.读取角度
 	for (uint8_t i = 0; i < 10; i++) {
@@ -78,14 +78,18 @@ static void GetMotorPreCurrent(float *ua,float *ub,float *uc)
 	*uc = GetADC1ChannelXValue(1) - 0.0f;
 	*ua = 0.0f - *ub - *uc;
 	
-	*ua = *ua * 0.1611f * 1.5f;
-	*ub = *ub * 0.1611f * 1.5f;
-	*uc = *uc * 0.1611f * 1.5f;
+//	*ua = *ua * 0.1611f * 1.5f;    /0.00537
+//	*ub = *ub * 0.1611f * 1.5f;
+//	*uc = *uc * 0.1611f * 1.5f;
+	
+	*ua = *ua * 0.537f * 1.5f;    
+	*ub = *ub * 0.537f * 1.5f;
+	*uc = *uc * 0.537f * 1.5f;
 	
 }
 
 //声明FOC对象
-FOC_EXPORT(gMotorFOC,7.0f,3,
+FOC_EXPORT(gMotorFOC,4.0f,3,
 			SetMotorAndTimITEnable,
 			GetTimer3EncoderAngle,
 			GetMotorSVPWMSector,

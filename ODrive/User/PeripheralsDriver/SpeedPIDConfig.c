@@ -28,7 +28,7 @@ void  SetMotorCurrent(float current)
 }
 
 
-SPEED_PID_CONTROL_EXPORT(gSpeedPID,0.002,100,GetMotorPreSpeed,SetMotorCurrent)
+SPEED_PID_CONTROL_EXPORT(gSpeedPID,0.002,200,GetMotorPreSpeed,SetMotorCurrent)
 
 
 
@@ -47,7 +47,7 @@ SPEED_PID_CONTROL_EXPORT(gSpeedPID,0.002,100,GetMotorPreSpeed,SetMotorCurrent)
 void SpeedPIDConfig_Init(void)
 {
     SetSpeedPIDEnable(&gSpeedPID,1);
-    SetSpeedPIDParams(&gSpeedPID,0.6f,0.01f,0.0f);
+    SetSpeedPIDParams(&gSpeedPID,40.0f,0.6f,0.0f);
     SetSpeedPIDTar(&gSpeedPID,0.0f);
 }
 

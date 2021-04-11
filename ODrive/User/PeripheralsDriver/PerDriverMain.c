@@ -38,7 +38,7 @@ int debugFlag = 0;
 void PerDriverMain_Loop(void)
 {
 	//打印调试信息
-	RUN_BY_LIMIT_BLOCK(10,
+	RUN_BY_LIMIT_BLOCK(5,
 		//FOCConfig_Printf();
 		SpeedPIDConfig_Printf();
 		PositionPIDConfig_Printf();
@@ -48,12 +48,14 @@ void PerDriverMain_Loop(void)
 	RUN_BY_LIMIT_BLOCK(4000,
 		if (debugFlag == 0) {
 			debugFlag = 1;
-			//SetSpeedPIDConfigTarSpeed(0.0f);
-			SetPositionPIDConfigTarPosition(180.0);
+			//SetTarIDIQ(0,20);
+			//SetSpeedPIDConfigTarSpeed(10.0f);
+			SetPositionPIDConfigTarPosition(90.0);
 		} else if (debugFlag == 1){
 			debugFlag = 0;
-			//SetSpeedPIDConfigTarSpeed(0.0f);
-			SetPositionPIDConfigTarPosition(180.0);
+			//SetTarIDIQ(0,-20);
+			//SetSpeedPIDConfigTarSpeed(5.0f);
+			SetPositionPIDConfigTarPosition(90.0);
 		}
 	)
 	//位置闭环
