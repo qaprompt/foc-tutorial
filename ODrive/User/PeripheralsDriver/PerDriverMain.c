@@ -55,7 +55,7 @@ void PerDriverMain_Loop(void)
 			debugFlag = 0;
 			//SetTarIDIQ(0,-20);
 			//SetSpeedPIDConfigTarSpeed(5.0f);
-			SetPositionPIDConfigTarPosition(90.0);
+			SetPositionPIDConfigTarPosition(180.0);
 		}
 	)
 	//位置闭环
