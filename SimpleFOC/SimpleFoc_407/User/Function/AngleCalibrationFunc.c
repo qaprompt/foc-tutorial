@@ -82,7 +82,7 @@ void Motor2AngleCalibration(void)
 *************************************************************/
 void AngleCalibrationFunc_Init(void)
 {
-    //Motor1AngleCalibration();
+    Motor1AngleCalibration();
     //Motor2AngleCalibration();
 }
 

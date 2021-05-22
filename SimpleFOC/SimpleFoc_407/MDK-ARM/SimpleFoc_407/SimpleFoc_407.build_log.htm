@@ -22,12 +22,25 @@ Dialog DLL:      TCM.DLL V1.48.0.0
  
 <h2>Project:</h2>
 C:\Users\Administrator\Desktop\FOC\FOC½Ì³Ì\foc-tutorial\SimpleFOC\SimpleFoc_407\MDK-ARM\SimpleFoc_407.uvprojx
-Project File Date:  04/25/2021
+Project File Date:  05/17/2021
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\SoftWare\Keil\ARM\ARMCC\Bin'
 Build target 'SimpleFoc_407'
-"SimpleFoc_407\SimpleFoc_407.axf" - 0 Error(s), 0 Warning(s).
+compiling AngleCalibrationFunc.c...
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h(52): warning:  #47-D: incompatible redefinition of macro "__FPU_PRESENT" 
+  #define __FPU_PRESENT             1U       /*!< FPU present                                   */
+../Drivers/CMSIS/Include/core_cm4.h(79): warning:  #47-D: incompatible redefinition of macro "__FPU_USED" 
+        #define __FPU_USED       1U
+..\User\Function\AngleCalibrationFunc.c(21): warning:  #550-D: variable "angle"  was set but never used
+  	float angle;
+..\User\Function\AngleCalibrationFunc.c(53): warning:  #550-D: variable "angle"  was set but never used
+  	float angle;
+..\User\Function\AngleCalibrationFunc.c: 4 warnings, 0 errors
+linking...
+Program Size: Code=22948 RO-data=2520 RW-data=836 ZI-data=2612  
+FromELF: creating hex file...
+"SimpleFoc_407\SimpleFoc_407.axf" - 0 Error(s), 4 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -50,7 +63,7 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.4.0
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>

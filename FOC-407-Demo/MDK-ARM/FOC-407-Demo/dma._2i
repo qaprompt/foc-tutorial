@@ -1,0 +1,6 @@
+--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\User\APP -I ..\User\Framework -I ..\User\Function -I ..\User\MCUDriver -I ..\User\PeripheralsDriver -I ..\User\RTT -I ..\Drivers\CMSIS\DSP\Include
+-I.\RTE\_FOC-407-Demo
+-ID:\SoftWare\Keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include
+-ID:\SoftWare\Keil\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -D__FPU_PRESENT="1" -D__FPU_USED="1" -DARM_MATH_CM4 -D__CC_ARM
+-o foc-407-demo\dma.o --depend foc-407-demo\dma.d --feedback "FOC-407-Demo\FOC-407-Demo.fed" "../Core/Src/dma.c"
