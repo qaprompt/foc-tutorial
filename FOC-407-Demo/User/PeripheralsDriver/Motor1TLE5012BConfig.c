@@ -7,7 +7,9 @@
 #include "timer.h"
 
 
-TLE5012B_EXPORT(gMorot1Encoder,45.484787f,Motor1SPI1SetCS,Motor1SPI1WriteData,Motor1SPI1ReadData,rt_hw_us_delay)
+//11.832636
+
+TLE5012B_EXPORT(gMorot1Encoder,11.832636f,Motor1SPI1SetCS,Motor1SPI1WriteData,Motor1SPI1ReadData,rt_hw_us_delay)
 
 
 

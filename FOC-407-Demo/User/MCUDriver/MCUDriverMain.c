@@ -5,6 +5,9 @@
 
 //时间调度
 #include "Timer.h"
+
+//
+#include "Uart1.h"
 /*************************************************************
 ** Function name:      MCUDriverMain_Init
 ** Descriptions:       芯片初始化
@@ -16,14 +19,10 @@
 *************************************************************/
 void MCUDriverMain_Init(void)
 {
+	uint8_t data = 30;
     Motor1TIM1_Init();
 	Motor2TIM3_Init();
-	SetMotor1ChannelAHighLeaveTime_us(50);
-    SetMotor1ChannelBHighLeaveTime_us(50);
-    SetMotor1ChannelCHighLeaveTime_us(50);
-	SetMotor2ChannelAHighLeaveTime_us(50);
-    SetMotor2ChannelBHighLeaveTime_us(50);
-    SetMotor2ChannelCHighLeaveTime_us(50);
+	//Uart1_SendData(&data,1);
 }
 
 /*************************************************************

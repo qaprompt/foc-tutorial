@@ -122,12 +122,12 @@ void GetVectorDuration(PSvpwm_Struct pSvpwm)
 ** Returned value:      None
 ** Remarks:             None
 *************************************************************/
+
+void SvpwmGenerate(PSvpwm_Struct pSvpwm)
+{
     float ta;
     float tb;
     float tc;
-void SvpwmGenerate(PSvpwm_Struct pSvpwm)
-{
-
     switch (pSvpwm->sector) {
         case 1:
             ta = pSvpwm->t4 + pSvpwm->t6 + pSvpwm->t7;
@@ -160,9 +160,6 @@ void SvpwmGenerate(PSvpwm_Struct pSvpwm)
             tc = pSvpwm->t5 + pSvpwm->t7;
             break;
     }
-//    printf("1:%f\r\n",ta);
-//    printf("2:%f\r\n",tb);
-//    printf("3:%f\r\n",tc);
     pSvpwm->SetChannelAHighLeaveTime_us(ta);
     pSvpwm->SetChannelBHighLeaveTime_us(tb);
     pSvpwm->SetChannelCHighLeaveTime_us(tc);

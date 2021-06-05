@@ -46,7 +46,7 @@ void Motor1AngleCalibration(void)
 	for (uint8_t i = 0; i < 10; i++) {
 		angle = Motor1TLE5012BReadAngel();
 		HAL_Delay(100);
-//		printf("1:float%d\r\n",angle);
+		//printf("1:float%f\r\n",angle);
 	}
 	
 
@@ -56,8 +56,6 @@ void Motor1AngleCalibration(void)
 	SetMotor1ChannelCHighLeaveTime_us(0);
 	Motor1SetEnable(0);
     while(1){
-//		angle = Motor1TLE5012BReadAngel();
-//		printf("1:float%d\r\n",angle);
 		HAL_Delay(10);
 		Motor1SetEnable(0);
 		Motor2SetEnable(0);
@@ -87,7 +85,7 @@ void Motor2AngleCalibration(void)
 	for (uint8_t i = 0; i < 10; i++) {
 		angle = Motor2TLE5012BReadAngel();
 		HAL_Delay(100);
-//		printf("1:float%d\r\n",angle);
+		printf("2:float%f\r\n",angle);
 	}
 	
 
@@ -97,8 +95,6 @@ void Motor2AngleCalibration(void)
 	SetMotor2ChannelCHighLeaveTime_us(0);
 	Motor2SetEnable(0);
     while(1){
-		angle = Motor2TLE5012BReadAngel();
-		printf("1:%f\r\n",angle);
 		HAL_Delay(10);
 		Motor1SetEnable(0);
 		Motor2SetEnable(0);

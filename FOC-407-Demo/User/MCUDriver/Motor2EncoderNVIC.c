@@ -1,68 +1,67 @@
 #include "Motor2EncoderNVIC.h"
 
 #include "main.h"
-#include "TIM3Encoder.h"
+#include "Motor2TIM4Encoder.h"
 
 
 
 
-struct SEncoderCalibration_Struct
+struct SMotor2EncoderCalibration_Struct
 {
     /* data */
     int calibrationValue;  //校准值
     uint8_t calibrationFlag;     //第一次值
 };
 
-struct SEncoderCalibration_Struct gEncoderCal = {0};
+struct SMotor2EncoderCalibration_Struct gMotor2EncoderCal = {0};
 
 
 
 /*************************************************************
-** Function name:       GPIONVIC_Init
-** Descriptions:        IO中断初始化
+** Function name:       Motor2EncoderZ_Init
+** Descriptions:        电机1编码器中断中断初始化
 ** Input parameters:    None
 ** Output parameters:   None
 ** Returned value:      None
 ** Remarks:             None
 *************************************************************/
-void GPIONVIC_Init(void)
+void Motor2EncoderZ_Init(void)
 {
-    gEncoderCal.calibrationValue = 0;
-    gEncoderCal.calibrationFlag = 0;
+    gMotor2EncoderCal.calibrationValue = 0;
+    gMotor2EncoderCal.calibrationFlag = 0;
 }
 /*************************************************************
-** Function name:       GPIONVIC_DeInit
-** Descriptions:        IO中断反初始化
+** Function name:       Motor2EncoderZ_DeInit
+** Descriptions:        电机1编码器中断反初始化
 ** Input parameters:    None
 ** Output parameters:   None
 ** Returned value:      None
 ** Remarks:             None
 *************************************************************/
-void GPIONVIC_DeInit(void)
+void Motor2EncoderZ_DeInit(void)
 {
-    gEncoderCal.calibrationValue = 0;
-    gEncoderCal.calibrationFlag = 0;
+    gMotor2EncoderCal.calibrationValue = 0;
+    gMotor2EncoderCal.calibrationFlag = 0;
 }
 
 /*************************************************************
-** Function name:       HAL_GPIO_EXTI_Callback
-** Descriptions:        中断回调函数
+** Function name:       Motor2EncoderZEXITCallback
+** Descriptions:        电机1编码器中断回调函数
 ** Input parameters:    None
 ** Output parameters:   None
 ** Returned value:      None
 ** Remarks:             None
 *************************************************************/
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+void Motor2EncoderZEXITCallback(void)
 {
-		if(GPIO_Pin == Encoder_Z_Pin) {
-            if (gEncoderCal.calibrationFlag == 0) {
-                gEncoderCal.calibrationValue = GetTimer3EncoderCnt();
-                gEncoderCal.calibrationFlag = 1;
-            } else {
-                SetTimer3EncoderCnt(gEncoderCal.calibrationValue);
-            }
-            printf("1:%d\r\n",gEncoderCal.calibrationValue);
-        }
+	if (gMotor2EncoderCal.calibrationFlag == 0) {
+		gMotor2EncoderCal.calibrationValue = Motor2TIM4EncoderGetCnt();
+		gMotor2EncoderCal.calibrationFlag = 1;
+	} else {
+		Motor2TIM4EncoderSetCnt(gMotor2EncoderCal.calibrationValue);
+	}
+	//printf("1:%d\r\n",gMotor2EncoderCal.calibrationValue);
+
 }
 
 

@@ -4,9 +4,9 @@
 //电机2电流环
 #include "Motor2FOCConfig.h"
 
-#define M1_SPEED_KP  0.08f
-#define M1_SPEED_KI  0.001f
-#define M1_SPEED_KD  0.0f
+#define M2_SPEED_KP  0.25f
+#define M2_SPEED_KI  0.0008f
+#define M2_SPEED_KD  0.0f
 
 
 
@@ -33,7 +33,7 @@ void  Motor2SetCurrent(float current)
 }
 
 
-SPEED_PID_CONTROL_EXPORT(gMotor2SpeedPID,0.002,200,Motor2GetPreSpeed,Motor2SetCurrent)
+SPEED_PID_CONTROL_EXPORT(gMotor2SpeedPID,0.002,10,Motor2GetPreSpeed,Motor2SetCurrent)
 
 
 
@@ -52,7 +52,7 @@ SPEED_PID_CONTROL_EXPORT(gMotor2SpeedPID,0.002,200,Motor2GetPreSpeed,Motor2SetCu
 void Motor2SpeedPIDConfig_Init(void)
 {
     SetSpeedPIDEnable(&gMotor2SpeedPID,1);
-    SetSpeedPIDParams(&gMotor2SpeedPID,M1_SPEED_KP,M1_SPEED_KI,M1_SPEED_KD);
+    SetSpeedPIDParams(&gMotor2SpeedPID,M2_SPEED_KP,M2_SPEED_KI,M2_SPEED_KD);
     SetSpeedPIDTar(&gMotor2SpeedPID,0.0f);
 }
 

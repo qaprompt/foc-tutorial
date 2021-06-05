@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx,__FPU_PRESENT=1,__FPU_USED=1,ARM_MATH_CM4,__CC_ARM</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;                                       ../Drivers/STM32F4xx_HAL_Driver/Inc;                                       ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;                                       ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;                                       ../Drivers/CMSIS/Include;                                       ..\User\APP;                                       ..\User\Framework;                                       ..\User\Function;                                       ..\User\MCUDriver;                                       ..\User\PeripheralsDriver;                                       ..\User\RTT;                                       ..\Drivers\CMSIS\DSP\Include</IncludePath>
+              <IncludePath>../Core/Inc; ../Drivers/STM32F4xx_HAL_Driver/Inc; ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy; ../Drivers/CMSIS/Device/ST/STM32F4xx/Include; ../Drivers/CMSIS/Include; ..\User\APP; ..\User\Framework; ..\User\Function; ..\User\MCUDriver; ..\User\PeripheralsDriver; ..\User\RTT; ..\Drivers\CMSIS\DSP\Include; ..\User\Protocol</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -659,34 +659,24 @@
               <FilePath>..\User\MCUDriver\Motor1SPI1.h</FilePath>
             </File>
             <File>
-              <FileName>Timer.c</FileName>
+              <FileName>Motor1EncoderNVIC.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\User\MCUDriver\Timer.c</FilePath>
+              <FilePath>..\User\MCUDriver\Motor1EncoderNVIC.c</FilePath>
             </File>
             <File>
-              <FileName>Timer.h</FileName>
+              <FileName>Motor1EncoderNVIC.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\User\MCUDriver\Timer.h</FilePath>
+              <FilePath>..\User\MCUDriver\Motor1EncoderNVIC.h</FilePath>
             </File>
             <File>
-              <FileName>Uart1.c</FileName>
+              <FileName>Motor1TIM2Encoder.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\User\MCUDriver\Uart1.c</FilePath>
+              <FilePath>..\User\MCUDriver\Motor1TIM2Encoder.c</FilePath>
             </File>
             <File>
-              <FileName>Uart1.h</FileName>
+              <FileName>Motor1TIM2Encoder.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\User\MCUDriver\Uart1.h</FilePath>
-            </File>
-            <File>
-              <FileName>LEDGPIO.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\MCUDriver\LEDGPIO.c</FilePath>
-            </File>
-            <File>
-              <FileName>LEDGPIO.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\User\MCUDriver\LEDGPIO.h</FilePath>
+              <FilePath>..\User\MCUDriver\Motor1TIM2Encoder.h</FilePath>
             </File>
             <File>
               <FileName>Motor2GPIO.c</FileName>
@@ -728,21 +718,61 @@
               <FileType>5</FileType>
               <FilePath>..\User\MCUDriver\Motor2TIM3Pwm.h</FilePath>
             </File>
+            <File>
+              <FileName>Motor2EncoderNVIC.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\MCUDriver\Motor2EncoderNVIC.c</FilePath>
+            </File>
+            <File>
+              <FileName>Motor2EncoderNVIC.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\MCUDriver\Motor2EncoderNVIC.h</FilePath>
+            </File>
+            <File>
+              <FileName>Motor2TIM4Encoder.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\MCUDriver\Motor2TIM4Encoder.c</FilePath>
+            </File>
+            <File>
+              <FileName>Motor2TIM4Encoder.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\MCUDriver\Motor2TIM4Encoder.h</FilePath>
+            </File>
+            <File>
+              <FileName>Timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\MCUDriver\Timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>Timer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\MCUDriver\Timer.h</FilePath>
+            </File>
+            <File>
+              <FileName>Uart1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\MCUDriver\Uart1.c</FilePath>
+            </File>
+            <File>
+              <FileName>Uart1.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\MCUDriver\Uart1.h</FilePath>
+            </File>
+            <File>
+              <FileName>LEDGPIO.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\MCUDriver\LEDGPIO.c</FilePath>
+            </File>
+            <File>
+              <FileName>LEDGPIO.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\MCUDriver\LEDGPIO.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>PeripheralsDriver</GroupName>
           <Files>
-            <File>
-              <FileName>LEDConfig.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\PeripheralsDriver\LEDConfig.c</FilePath>
-            </File>
-            <File>
-              <FileName>LEDConfig.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\User\PeripheralsDriver\LEDConfig.h</FilePath>
-            </File>
             <File>
               <FileName>PerDriverMain.c</FileName>
               <FileType>1</FileType>
@@ -754,24 +784,14 @@
               <FilePath>..\User\PeripheralsDriver\PerDriverMain.h</FilePath>
             </File>
             <File>
-              <FileName>Motor1FOCConfig.c</FileName>
+              <FileName>LEDConfig.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\User\PeripheralsDriver\Motor1FOCConfig.c</FilePath>
+              <FilePath>..\User\PeripheralsDriver\LEDConfig.c</FilePath>
             </File>
             <File>
-              <FileName>Motor1FOCConfig.h</FileName>
+              <FileName>LEDConfig.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\User\PeripheralsDriver\Motor1FOCConfig.h</FilePath>
-            </File>
-            <File>
-              <FileName>Motor1SvpwmConfig.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\PeripheralsDriver\Motor1SvpwmConfig.c</FilePath>
-            </File>
-            <File>
-              <FileName>Motor1SvpwmConfig.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\User\PeripheralsDriver\Motor1SvpwmConfig.h</FilePath>
+              <FilePath>..\User\PeripheralsDriver\LEDConfig.h</FilePath>
             </File>
             <File>
               <FileName>Motor1TLE5012BConfig.c</FileName>
@@ -784,34 +804,24 @@
               <FilePath>..\User\PeripheralsDriver\Motor1TLE5012BConfig.h</FilePath>
             </File>
             <File>
-              <FileName>Motor2TLE5012BConfig.c</FileName>
+              <FileName>Motor1SvpwmConfig.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\User\PeripheralsDriver\Motor2TLE5012BConfig.c</FilePath>
+              <FilePath>..\User\PeripheralsDriver\Motor1SvpwmConfig.c</FilePath>
             </File>
             <File>
-              <FileName>Motor2TLE5012BConfig.h</FileName>
+              <FileName>Motor1SvpwmConfig.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\User\PeripheralsDriver\Motor2TLE5012BConfig.h</FilePath>
+              <FilePath>..\User\PeripheralsDriver\Motor1SvpwmConfig.h</FilePath>
             </File>
             <File>
-              <FileName>Motor2FOCConfig.c</FileName>
+              <FileName>Motor1FOCConfig.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\User\PeripheralsDriver\Motor2FOCConfig.c</FilePath>
+              <FilePath>..\User\PeripheralsDriver\Motor1FOCConfig.c</FilePath>
             </File>
             <File>
-              <FileName>Motor2FOCConfig.h</FileName>
+              <FileName>Motor1FOCConfig.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\User\PeripheralsDriver\Motor2FOCConfig.h</FilePath>
-            </File>
-            <File>
-              <FileName>Motor2SvpwmConfig.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\PeripheralsDriver\Motor2SvpwmConfig.c</FilePath>
-            </File>
-            <File>
-              <FileName>Motor2SvpwmConfig.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\User\PeripheralsDriver\Motor2SvpwmConfig.h</FilePath>
+              <FilePath>..\User\PeripheralsDriver\Motor1FOCConfig.h</FilePath>
             </File>
             <File>
               <FileName>Motor1SpeedPIDConfig.c</FileName>
@@ -834,14 +844,34 @@
               <FilePath>..\User\PeripheralsDriver\Motor1PositionPIDConfig.h</FilePath>
             </File>
             <File>
-              <FileName>Motor2PositionPIDConfig.c</FileName>
+              <FileName>Motor2TLE5012BConfig.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\User\PeripheralsDriver\Motor2PositionPIDConfig.c</FilePath>
+              <FilePath>..\User\PeripheralsDriver\Motor2TLE5012BConfig.c</FilePath>
             </File>
             <File>
-              <FileName>Motor2PositionPIDConfig.h</FileName>
+              <FileName>Motor2TLE5012BConfig.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\User\PeripheralsDriver\Motor2PositionPIDConfig.h</FilePath>
+              <FilePath>..\User\PeripheralsDriver\Motor2TLE5012BConfig.h</FilePath>
+            </File>
+            <File>
+              <FileName>Motor2SvpwmConfig.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\PeripheralsDriver\Motor2SvpwmConfig.c</FilePath>
+            </File>
+            <File>
+              <FileName>Motor2SvpwmConfig.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\PeripheralsDriver\Motor2SvpwmConfig.h</FilePath>
+            </File>
+            <File>
+              <FileName>Motor2FOCConfig.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\PeripheralsDriver\Motor2FOCConfig.c</FilePath>
+            </File>
+            <File>
+              <FileName>Motor2FOCConfig.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\PeripheralsDriver\Motor2FOCConfig.h</FilePath>
             </File>
             <File>
               <FileName>Motor2SpeedPIDConfig.c</FileName>
@@ -852,6 +882,16 @@
               <FileName>Motor2SpeedPIDConfig.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\User\PeripheralsDriver\Motor2SpeedPIDConfig.h</FilePath>
+            </File>
+            <File>
+              <FileName>Motor2PositionPIDConfig.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\PeripheralsDriver\Motor2PositionPIDConfig.c</FilePath>
+            </File>
+            <File>
+              <FileName>Motor2PositionPIDConfig.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\PeripheralsDriver\Motor2PositionPIDConfig.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -887,16 +927,6 @@
               <FileName>PositionPID.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\User\Framework\PositionPID.h</FilePath>
-            </File>
-            <File>
-              <FileName>RingBuffer.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\Framework\RingBuffer.c</FilePath>
-            </File>
-            <File>
-              <FileName>RingBuffer.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\User\Framework\RingBuffer.h</FilePath>
             </File>
             <File>
               <FileName>SpeedPID.c</FileName>
@@ -952,6 +982,21 @@
               <FileName>SEGGER_RTT_printf.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\RTT\SEGGER_RTT_printf.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Protocol</GroupName>
+          <Files>
+            <File>
+              <FileName>RingBuffer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Protocol\RingBuffer.c</FilePath>
+            </File>
+            <File>
+              <FileName>RingBuffer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\Protocol\RingBuffer.h</FilePath>
             </File>
           </Files>
         </Group>

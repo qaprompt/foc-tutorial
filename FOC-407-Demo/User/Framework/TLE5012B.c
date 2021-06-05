@@ -21,7 +21,6 @@ float ReadTLE5012BAngle(PTLE5012B_Struct pTLE5012B)
 	pTLE5012B->SPIWrite(0x8021);
 	data = pTLE5012B->SPIRead();
 	pTLE5012B->SetCSLeave(1);
-
 	data &= 0x7fff;
 	angle = data / 32767.0f * 360.0f;
 	//printf("pre:%f\r\n",angle);
@@ -29,7 +28,6 @@ float ReadTLE5012BAngle(PTLE5012B_Struct pTLE5012B)
 	if (angle < 0) {
 		angle = angle + 360.0f;
 	}
-	//printf("calibration:%f\r\n",angle);
     return  angle;
 }
 

@@ -1,4 +1,3 @@
-
 #ifndef RingBuffer_h
 #define RingBuffer_h
 

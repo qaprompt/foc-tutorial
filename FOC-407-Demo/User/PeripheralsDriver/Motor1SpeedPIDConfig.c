@@ -4,8 +4,8 @@
 //电机1电流环
 #include "Motor1FOCConfig.h"
 
-#define M1_SPEED_KP  0.08f
-#define M1_SPEED_KI  0.001f
+#define M1_SPEED_KP  0.25f
+#define M1_SPEED_KI  0.0008f
 #define M1_SPEED_KD  0.0f
 
 
@@ -33,7 +33,7 @@ void  Motor1SetCurrent(float current)
 }
 
 
-SPEED_PID_CONTROL_EXPORT(gMotor1SpeedPID,0.002,200,Motor1GetPreSpeed,Motor1SetCurrent)
+SPEED_PID_CONTROL_EXPORT(gMotor1SpeedPID,0.002,10,Motor1GetPreSpeed,Motor1SetCurrent)
 
 
 

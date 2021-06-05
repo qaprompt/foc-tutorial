@@ -1,14 +1,14 @@
 #include "Motor2PositionPIDConfig.h"
 //位置PID
 #include "PositionPID.h"
-//电机1速度闭环
+//电机2速度闭环
 #include "Motor2SpeedPIDConfig.h"
-//电机1电流闭环
+//电机2电流闭环
 #include "Motor2FOCConfig.h"
 
 #define M2_POSITION_KP  0.08f
 #define M2_POSITION_KI  0.000f
-#define M2_POSITION_KD  0.3f
+#define M2_POSITION_KD  0.08f
 
 
 
@@ -22,7 +22,7 @@ void Motor2SetPosition(float position)
     Motor2SpeedPIDConfigSetTar(position);
 }
 
-POSITION_PID_CONTROL_EXPORT(gMotor2PositionPID,0.005,100.0,Motor2GetPosition,Motor2SetPosition)
+POSITION_PID_CONTROL_EXPORT(gMotor2PositionPID,0.005,50.0,Motor2GetPosition,Motor2SetPosition)
 
 
 

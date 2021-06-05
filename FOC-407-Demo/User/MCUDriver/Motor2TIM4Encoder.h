@@ -22,11 +22,11 @@
 
 
 
-void Timer4EncoderInit(void);
-void Timer4EncoderReset(void);
-int32_t GetTimer4EncoderCnt(void);
-void SetTimer4EncoderCnt(int32_t cnt);
-float GetTimer4EncoderAngle(void);
+void Motor2TIM4EncoderInit(void);
+void Motor2TIM4EncoderReset(void);
+int32_t Motor2TIM4EncoderGetCnt(void);
+void Motor2TIM4EncoderSetCnt(int32_t cnt);
+float Motor2TIM4EncoderGetAngle(void);
 
 #endif //__Motor2TIM4Encoder_H__
 

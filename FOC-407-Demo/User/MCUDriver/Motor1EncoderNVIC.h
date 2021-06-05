@@ -14,7 +14,12 @@
 #define __Motor1EncoderNVIC_H__
 #include "stdint.h"
 
-void GPIONVIC_Init(void);
-void GPIONVIC_DeInit(void);
+void Motor1EncoderZ_Init(void);
+void Motor1EncoderZ_DeInit(void);
+void Motor1EncoderZEXITCallback(void);
+
 
 #endif //__Motor1EncoderNVIC_H__
+
+
+

@@ -10,11 +10,11 @@
 //电机1电流采集
 #include "Motor1ADC1.h"
 
-#define AD_TO_CURRENT 0.0008
+#define AD_TO_CURRENT 0.00032
 
 #define M1_OUTMAX  12.0f * 0.577f
-#define M1_KP  0.01f
-#define M1_KI  0.01f
+#define M1_KP  0.018f
+#define M1_KI  0.018f
 #define M1_KD  0.0f
 
 

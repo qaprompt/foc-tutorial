@@ -8,7 +8,7 @@
 
 #define M1_POSITION_KP  0.08f
 #define M1_POSITION_KI  0.000f
-#define M1_POSITION_KD  0.1f
+#define M1_POSITION_KD  0.08f
 
 
 

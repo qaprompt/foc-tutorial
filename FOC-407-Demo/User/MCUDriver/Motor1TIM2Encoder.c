@@ -4,91 +4,91 @@
 #include "main.h"
 
 #define CNTZERO 10000
-#define ENCODERPLUSE 8192
+#define ENCODERPLUSE 4096
 
 
-extern TIM_HandleTypeDef hTIM2;
+extern TIM_HandleTypeDef htim2;
 
-struct STimEnc_Struct {
-    int32_t TIM2Cnt;        //编码器脉冲数 0-360°
+struct SMotor1Timer2Encoder {
+    int32_t cnt;            //编码器脉冲数 0-ENCODERPLUSE
     float angle;			//编码器角度 0-360°
 };
-typedef struct STimEnc_Struct TimEnc_Struct; /* TimEnc 类型 */
-typedef TimEnc_Struct *PTimEnc_Struct;      /* PTimEnc 指针类型 */
+typedef struct SMotor1Timer2Encoder Motor1Timer2Encoder; /* TimEnc 类型 */
+typedef Motor1Timer2Encoder *PMotor1Timer2Encoder;      /* PTimEnc 指针类型 */
 
-TimEnc_Struct gSTTimerEncoder = {
-    .TIM2Cnt = 0,
+Motor1Timer2Encoder gMotor1Timer2Encoder = {
+    .cnt = 0,
     .angle = 0,
 };
 
 /*************************************************************
-** Function name:       TimerEncoderInit
+** Function name:       Motor1TIM2EncoderInit
 ** Descriptions:        初始化定时器2
 ** Input parameters:    None
 ** Output parameters:   None
 ** Returned value:      None
 *************************************************************/
-void TimerEncoderInit(void)
+void Motor1TIM2EncoderInit(void)
 {
-    HAL_TIM_Encoder_Start(&hTIM2, TIM_CHANNEL_1|TIM_CHANNEL_2);
-    __HAL_TIM_SET_COUNTER(&hTIM2,CNTZERO);
-    gSTTimerEncoder.angle = 0.0;
-    gSTTimerEncoder.TIM2Cnt = 0;
+    HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_1|TIM_CHANNEL_2);
+    __HAL_TIM_SET_COUNTER(&htim2,CNTZERO);
+    gMotor1Timer2Encoder.angle = 0.0;
+    gMotor1Timer2Encoder.cnt = 0;
 }
 /*************************************************************
-** Function name:       TimerEncoderInit
+** Function name:       Motor1TIM2EncoderReset
 ** Descriptions:        复位定时器2
 ** Input parameters:    None
 ** Output parameters:   None
 ** Returned value:      None
 *************************************************************/
-void TimerEncoderReset(void)
+void Motor1TIM2EncoderReset(void)
 {
-    __HAL_TIM_SET_COUNTER(&hTIM2,CNTZERO);
-    gSTTimerEncoder.angle = 0.0;
-    gSTTimerEncoder.TIM2Cnt = 0;
+    __HAL_TIM_SET_COUNTER(&htim2,CNTZERO);
+    gMotor1Timer2Encoder.angle = 0.0;
+    gMotor1Timer2Encoder.cnt = 0;
 }
 /*************************************************************
-** Function name:       GetTimer2EncoderCnt
+** Function name:       Motor1TIM2EncoderGetCnt
 ** Descriptions:        获取定时器2编码器模式CNT的值
 ** Input parameters:    None
 ** Output parameters:   None
 ** Returned value:      Timer2->CNT的值
 *************************************************************/
-int32_t GetTimer2EncoderCnt(void)
+int32_t Motor1TIM2EncoderGetCnt(void)
 {
-    gSTTimerEncoder.TIM2Cnt += __HAL_TIM_GET_COUNTER(&hTIM2) - CNTZERO;
-	__HAL_TIM_SET_COUNTER(&hTIM2,CNTZERO);
-	if (gSTTimerEncoder.TIM2Cnt < 0) {
-		gSTTimerEncoder.TIM2Cnt += ENCODERPLUSE;
+    gMotor1Timer2Encoder.cnt += __HAL_TIM_GET_COUNTER(&htim2) - CNTZERO;
+	__HAL_TIM_SET_COUNTER(&htim2,CNTZERO);
+	if (gMotor1Timer2Encoder.cnt < 0) {
+		gMotor1Timer2Encoder.cnt += ENCODERPLUSE;
 	}
-    gSTTimerEncoder.TIM2Cnt = gSTTimerEncoder.TIM2Cnt % ENCODERPLUSE;
-    return gSTTimerEncoder.TIM2Cnt;
+    gMotor1Timer2Encoder.cnt = gMotor1Timer2Encoder.cnt % ENCODERPLUSE;
+    return gMotor1Timer2Encoder.cnt;
 }
 /*************************************************************
-** Function name:       SetTimer2EncoderCnt
+** Function name:       Motor1TIM2EncoderSetCnt
 ** Descriptions:        设置Timer2Cnt的值
 ** Input parameters:    None
 ** Output parameters:   None
 ** Returned value:      None
 ** Remarks:             None
 *************************************************************/
-void SetTimer2EncoderCnt(int32_t cnt)
+void Motor1TIM2EncoderSetCnt(int32_t cnt)
 {
-	gSTTimerEncoder.TIM2Cnt = cnt;
+	gMotor1Timer2Encoder.cnt = cnt;
 }
 /*************************************************************
-** Function name:       GetTimerEncoderAngle
+** Function name:       Motor1TIM2EncoderGetAngle
 ** Descriptions:        获取编码器角度
 ** Input parameters:    None
 ** Output parameters:   None
 ** Returned value:      编码器角度
 *************************************************************/
-float GetTimer2EncoderAngle(void)
+float Motor1TIM2EncoderGetAngle(void)
 {
-    gSTTimerEncoder.angle = (float)GetTimer2EncoderCnt() / (float)ENCODERPLUSE * 360.0f;
-    if (gSTTimerEncoder.angle < 0) {
-        gSTTimerEncoder.angle = gSTTimerEncoder.angle + 360.0f;
+    gMotor1Timer2Encoder.angle = (float)Motor1TIM2EncoderGetCnt() / (float)ENCODERPLUSE * 360.0f;
+    if (gMotor1Timer2Encoder.angle < 0) {
+        gMotor1Timer2Encoder.angle = gMotor1Timer2Encoder.angle + 360.0f;
     }
-    return gSTTimerEncoder.angle;
+    return gMotor1Timer2Encoder.angle;
 }

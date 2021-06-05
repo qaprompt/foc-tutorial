@@ -6,8 +6,8 @@
 //时钟
 #include "timer.h"
 
-
-TLE5012B_EXPORT(gMorot2Encoder,72.193367,Motor2SPI2SetCS,Motor2SPI2WriteData,Motor2SPI2ReadData,rt_hw_us_delay)
+//11.832636
+TLE5012B_EXPORT(gMorot2Encoder,46.165962f,Motor2SPI2SetCS,Motor2SPI2WriteData,Motor2SPI2ReadData,rt_hw_us_delay)
 
 
 

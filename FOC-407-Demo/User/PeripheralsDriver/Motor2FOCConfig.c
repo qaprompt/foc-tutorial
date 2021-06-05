@@ -10,11 +10,11 @@
 //电机2电流采集
 #include "Motor2ADC2.h"
 
-#define AD_TO_CURRENT 0.0008
+#define AD_TO_CURRENT 0.00032
 
 #define M2_OUTMAX  12.0f * 0.577f
-#define M2_KP  0.01f
-#define M2_KI  0.01f
+#define M2_KP  0.018f
+#define M2_KI  0.018f
 #define M2_KD  0.0f
 
 

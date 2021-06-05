@@ -70,6 +70,7 @@ void Error_Handler(void);
 #define M1_Encoder_B_GPIO_Port GPIOA
 #define M1_Encoder_Z_Pin GPIO_PIN_2
 #define M1_Encoder_Z_GPIO_Port GPIOA
+#define M1_Encoder_Z_EXTI_IRQn EXTI2_IRQn
 #define M1_SPI_CS_Pin GPIO_PIN_4
 #define M1_SPI_CS_GPIO_Port GPIOA
 #define M1_SPI_SCK_Pin GPIO_PIN_5
@@ -102,6 +103,7 @@ void Error_Handler(void);
 #define M2_SPI_MOSI_GPIO_Port GPIOB
 #define M2_Encoder_Z_Pin GPIO_PIN_11
 #define M2_Encoder_Z_GPIO_Port GPIOD
+#define M2_Encoder_Z_EXTI_IRQn EXTI15_10_IRQn
 #define M2_Encoder_A_Pin GPIO_PIN_12
 #define M2_Encoder_A_GPIO_Port GPIOD
 #define M2_Encoder_B_Pin GPIO_PIN_13

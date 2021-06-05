@@ -33,6 +33,8 @@ void PerDriverMain_Init(void)
 	Motor2FOCConfig_Init();
 	Motor2SpeedPIDConfig_Init();
 	Motor2PositionPIDConfig_Init();
+	
+	
 }
 
 /*************************************************************
@@ -51,28 +53,28 @@ int16_t angle = 0;
 void PerDriverMain_Loop(void)
 {
 	//打印调试信息
-	RUN_BY_LIMIT_BLOCK(1,
+	RUN_BY_LIMIT_BLOCK(5,
 		//Motor1FOCConfig_Printf();
 		//Motor1SpeedPIDConfig_Printf();
 		//Motor1PositionPIDConfig_Printf();
 		//Motor2FOCConfig_Printf();
 		//Motor2SpeedPIDConfig_Printf();
-		Motor2PositionPIDConfig_Printf();
+		//Motor2PositionPIDConfig_Printf();
 
 	)
 	//电流环调试
 //	RUN_BY_LIMIT_BLOCK(2000,
 //		if (currentflag == 0) {
-//			Motor1SetTarIDIQ(0.0,0.1);
-//			Motor2SetTarIDIQ(0.0,0.1);
+//			//Motor1SetTarIDIQ(0.0,0.1);
+//			Motor2SetTarIDIQ(0.1,0.1);
 //			currentflag = 1;
 //		} else {
-//			Motor1SetTarIDIQ(0.0,0.05);
-//			Motor2SetTarIDIQ(0.0,0.05);
+//			//Motor1SetTarIDIQ(0.0,0.05);
+//			Motor2SetTarIDIQ(0.05,0.05);
 //			currentflag = 0;
 //		}
 //	)
-//	//速度环调试
+	//速度环调试
 //	 RUN_BY_LIMIT_BLOCK(4000,
 //	 	if (currentflag == 0) {
 //	 		//Motor1SpeedPIDConfigSetTar(10);
@@ -84,7 +86,7 @@ void PerDriverMain_Loop(void)
 //	 		currentflag = 0;
 //	 	}
 //	 )
-	//位置环调试
+//	//位置环调试
 //	RUN_BY_LIMIT_BLOCK(2000,
 //		if (currentflag == 0) {
 //			//Motor1PositionPIDConfigSetTar(90);
@@ -92,11 +94,11 @@ void PerDriverMain_Loop(void)
 //			currentflag = 1;
 //		} else {
 //			//Motor1PositionPIDConfigSetTar(180);
-//			Motor2PositionPIDConfigSetTar(0);
+//			Motor2PositionPIDConfigSetTar(60);
 //			currentflag = 0;
 //		}
 //	)
-	//位置环应用
+//	//位置环应用
 	RUN_BY_LIMIT_BLOCK(1000,
 		angle += 30;
 		if(angle >= 360) {

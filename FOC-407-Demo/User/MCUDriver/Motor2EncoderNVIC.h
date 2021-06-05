@@ -4,7 +4,7 @@
 *
 **********************************************************************
 * File name:      Motor2EncoderNVIC.h
-* Date:           2021-03-12
+* Date:           2021-05-16
 * Version:        V1.0
 * Author          liuxiang
 * @history:
@@ -14,9 +14,12 @@
 #define __Motor2EncoderNVIC_H__
 #include "stdint.h"
 
-void Motor2EncoderNVIC_Init(void);
-void Motor2EncoderNVIC_DeInit(void);
+void Motor2EncoderZ_Init(void);
+void Motor2EncoderZ_DeInit(void);
+void Motor2EncoderZEXITCallback(void);
 
 
 #endif //__Motor2EncoderNVIC_H__
+
+
 
