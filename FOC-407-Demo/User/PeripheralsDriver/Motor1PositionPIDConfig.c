@@ -39,7 +39,7 @@ void Motor1PositionPIDConfig_Init(void)
 {
     SetPositionPIDEnable(&gMotor1PositionPID,1);
     SetPositionPIDParams(&gMotor1PositionPID,M1_POSITION_KP,M1_POSITION_KI,M1_POSITION_KD);
-    SetPositionPIDTar(&gMotor1PositionPID,0.0f);
+	Motor1PositionPIDConfigSetTar(0.0f);
 }
 
 /*************************************************************

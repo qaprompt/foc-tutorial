@@ -1,0 +1,13 @@
+foc-407-demo\svpwm.o: ..\User\Framework\Svpwm.c
+foc-407-demo\svpwm.o: ..\User\Framework\Svpwm.h
+foc-407-demo\svpwm.o: D:\SoftWare\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+foc-407-demo\svpwm.o: ..\Drivers\CMSIS\DSP\Include\arm_math.h
+foc-407-demo\svpwm.o: ../Drivers/CMSIS/Include/core_cm4.h
+foc-407-demo\svpwm.o: ../Drivers/CMSIS/Include/cmsis_version.h
+foc-407-demo\svpwm.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+foc-407-demo\svpwm.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+foc-407-demo\svpwm.o: D:\SoftWare\Keil\ARM\ARMCC\Bin\..\include\string.h
+foc-407-demo\svpwm.o: D:\SoftWare\Keil\ARM\ARMCC\Bin\..\include\math.h
+foc-407-demo\svpwm.o: ..\User\RTT\SEGGER_RTT_Conf.h
+foc-407-demo\svpwm.o: ..\User\RTT\SEGGER_RTT.h
+foc-407-demo\svpwm.o: D:\SoftWare\Keil\ARM\ARMCC\Bin\..\include\stdio.h
