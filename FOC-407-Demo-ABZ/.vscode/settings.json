@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "adc1.h": "c",
+        "main.h": "c",
+        "segger_rtt.h": "c",
+        "motor2tim4encoder.h": "c"
+    }
+}
