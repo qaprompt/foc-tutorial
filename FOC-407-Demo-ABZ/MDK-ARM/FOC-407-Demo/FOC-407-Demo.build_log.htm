@@ -22,18 +22,23 @@ Dialog DLL:      TCM.DLL V1.48.0.0
  
 <h2>Project:</h2>
 C:\Users\Administrator\Desktop\FOC\FOC½Ì³Ì\foc-tutorial\FOC-407-Demo-ABZ\MDK-ARM\FOC-407-Demo.uvprojx
-Project File Date:  06/07/2021
+Project File Date:  06/14/2021
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\SoftWare\Keil\ARM\ARMCC\Bin'
 Build target 'FOC-407-Demo'
 Note: source file '..\User\MCUDriver\Motor1TIM2Encoder.c' - object file renamed from 'FOC-407-Demo\Motor1TIM2Encoder.o' to 'FOC-407-Demo\motor1tim2encoder_1.o'.
 Note: source file '..\User\MCUDriver\Motor2TIM4Encoder.c' - object file renamed from 'FOC-407-Demo\Motor2TIM4Encoder.o' to 'FOC-407-Demo\motor2tim4encoder_1.o'.
-compiling Motor1PositionPIDConfig.c...
+compiling MCUDriverMain.c...
+..\User\MCUDriver\CAN1.h(24): warning:  #1-D: last line of file ends without a newline
+  #endif //__CAN1_H__
+..\User\MCUDriver\MCUDriverMain.c(27): warning:  #177-D: variable "data"  was declared but never referenced
+  	uint8_t data = 30;
+..\User\MCUDriver\MCUDriverMain.c: 2 warnings, 0 errors
 linking...
-Program Size: Code=22058 RO-data=2510 RW-data=876 ZI-data=2972  
+Program Size: Code=24674 RO-data=2510 RW-data=892 ZI-data=2972  
 FromELF: creating hex file...
-"FOC-407-Demo\FOC-407-Demo.axf" - 0 Error(s), 0 Warning(s).
+"FOC-407-Demo\FOC-407-Demo.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 

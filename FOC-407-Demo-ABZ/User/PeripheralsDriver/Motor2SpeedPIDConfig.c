@@ -58,7 +58,7 @@ void Motor2SpeedPIDConfig_Init(void)
 
 /*************************************************************
 ** Function name:       Motor2SpeedPIDConfigSetTar
-** Descriptions:        电机2速度PID初始化
+** Descriptions:        电机2速度PID设置目标值
 ** Input parameters:    None
 ** Output parameters:   None
 ** Returned value:      None
@@ -67,6 +67,19 @@ void Motor2SpeedPIDConfig_Init(void)
 void Motor2SpeedPIDConfigSetTar(float tarSpeed)
 {
     SetSpeedPIDTar(&gMotor2SpeedPID,tarSpeed);
+}
+
+/*************************************************************
+** Function name:       Motor2SpeedPIDConfigGetPre
+** Descriptions:        电机2速度PID设置实际值
+** Input parameters:    None
+** Output parameters:   None
+** Returned value:      实际转速
+** Remarks:             None
+*************************************************************/
+float Motor2SpeedPIDConfigGetPre(void)
+{
+    return GetSpeedPIDPre(&gMotor2SpeedPID);
 }
 
 /*************************************************************

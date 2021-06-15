@@ -116,6 +116,7 @@ SpeedPIDControl_Struct x = {                                                    
 void SpeedPIDCycle(PSpeedPIDControl_Struct pSpeedPID);
 void SetSpeedPIDParams(PSpeedPIDControl_Struct pSpeedPID,float kp,float ki,float kd);
 void SetSpeedPIDTar(PSpeedPIDControl_Struct pSpeedPID,float tar);
+float GetSpeedPIDPre(PSpeedPIDControl_Struct pSpeedPID);
 void SetSpeedPIDEnable(PSpeedPIDControl_Struct pSpeedPID,float isEnable);
 void SpeedPIDPrintf(PSpeedPIDControl_Struct pSpeedPID);
 #endif //__SpeedPID_H__

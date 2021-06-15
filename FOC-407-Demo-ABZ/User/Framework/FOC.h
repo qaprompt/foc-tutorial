@@ -104,6 +104,7 @@ FOC_Struct x = {                            \
 
 void FocContorl(PFOC_Struct pFOC);
 void SetCurrentPIDTar(PFOC_Struct pFOC,float tarid,float tariq);
+float GetPreIQ(PFOC_Struct pFOC);
 void SetCurrentPIDParams(PFOC_Struct pFOC,float kp,float ki,float kd,float outMax);
 void SetFocEnable(PFOC_Struct pFOC,uint8_t isEnable);
 void FOCPrintf(PFOC_Struct pFOC);

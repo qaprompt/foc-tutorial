@@ -38,6 +38,7 @@ foc-407-demo\perdrivermain.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_
 foc-407-demo\perdrivermain.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 foc-407-demo\perdrivermain.o: ..\User\MCUDriver\Timer.h
 foc-407-demo\perdrivermain.o: D:\SoftWare\Keil\ARM\ARMCC\Bin\..\include\stdbool.h
+foc-407-demo\perdrivermain.o: D:\SoftWare\Keil\ARM\ARMCC\Bin\..\include\math.h
 foc-407-demo\perdrivermain.o: ..\User\PeripheralsDriver\LEDConfig.h
 foc-407-demo\perdrivermain.o: ..\User\PeripheralsDriver\Motor1SvpwmConfig.h
 foc-407-demo\perdrivermain.o: ..\User\PeripheralsDriver\Motor1FOCConfig.h

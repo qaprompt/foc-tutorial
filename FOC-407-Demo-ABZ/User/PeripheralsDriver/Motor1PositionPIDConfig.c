@@ -54,7 +54,18 @@ void Motor1PositionPIDConfigSetTar(float tarPosition)
 {
     SetPositionPIDTar(&gMotor1PositionPID,tarPosition);
 }
-
+/*************************************************************
+** Function name:       Motor1PositionPIDConfigGetPre
+** Descriptions:        获取实际位置
+** Input parameters:    None
+** Output parameters:   None
+** Returned value:      None
+** Remarks:             None
+*************************************************************/
+float Motor1PositionPIDConfigGetPre(void)
+{
+    return GetPositionPIDPre(&gMotor1PositionPID);
+}
 /*************************************************************
 ** Function name:       Motor1PositionPIDConfig_Init
 ** Descriptions:        位置PID初始化

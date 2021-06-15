@@ -96,7 +96,18 @@ void SetPositionPIDTar(PPositionPIDControl_Struct pPositionPID,float tar)
     pPositionPID->pPID.tar = tar;
 }
 
-
+/*************************************************************
+** Function name:       GetPositionPIDPre
+** Descriptions:        获取实际位置值
+** Input parameters:    PPositionPIDControl_Struct:结构体指针
+** Output parameters:   None
+** Returned value:      实际位置值
+** Remarks:             None
+*************************************************************/
+float GetPositionPIDPre(PPositionPIDControl_Struct pPositionPID)
+{
+    return pPositionPID->pPID.pre;
+}
 
 /*************************************************************
 ** Function name:       SetPositionPIDEnable

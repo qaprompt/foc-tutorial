@@ -56,6 +56,19 @@ void Motor2PositionPIDConfigSetTar(float tarPosition)
 }
 
 /*************************************************************
+** Function name:       Motor2PositionPIDConfigGetPre
+** Descriptions:        获取实际位置
+** Input parameters:    None
+** Output parameters:   None
+** Returned value:      None
+** Remarks:             None
+*************************************************************/
+float Motor2PositionPIDConfigGetPre(void)
+{
+    return GetPositionPIDPre(&gMotor2PositionPID);
+}
+
+/*************************************************************
 ** Function name:       Motor2PositionPIDConfig_Init
 ** Descriptions:        位置PID初始化
 ** Input parameters:    None

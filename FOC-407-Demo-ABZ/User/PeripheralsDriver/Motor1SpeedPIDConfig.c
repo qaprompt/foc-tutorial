@@ -68,7 +68,18 @@ void Motor1SpeedPIDConfigSetTar(float tarSpeed)
 {
     SetSpeedPIDTar(&gMotor1SpeedPID,tarSpeed);
 }
-
+/*************************************************************
+** Function name:       Motor1SpeedPIDConfigGetPre
+** Descriptions:        电机1速度PID设置实际值
+** Input parameters:    None
+** Output parameters:   None
+** Returned value:      实际转速
+** Remarks:             None
+*************************************************************/
+float Motor1SpeedPIDConfigGetPre(void)
+{
+    return GetSpeedPIDPre(&gMotor1SpeedPID);
+}
 /*************************************************************
 ** Function name:       Motor1SpeedPIDConfig_Init
 ** Descriptions:        电机1速度PID初始化

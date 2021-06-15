@@ -17,6 +17,7 @@
 
 void Motor1SpeedPIDConfig_Init(void);
 void Motor1SpeedPIDConfigSetTar(float tarSpeed);
+float Motor1SpeedPIDConfigGetPre(void);
 void Motor1SpeedPIDConfig_Loop(void);
 void Motor1SpeedPIDConfig_Printf(void);
 

@@ -211,6 +211,18 @@ void SetCurrentPIDTar(PFOC_Struct pFOC,float tarid,float tariq)
     pFOC->tariq = tariq;
 }
 /*************************************************************
+** Function name:       GetPreIQ
+** Descriptions:        获取Q轴的实际值
+** Input parameters:    pFOC：FOC对象指针
+** Output parameters:   None
+** Returned value:      Q轴实际电流
+** Remarks:             None
+*************************************************************/
+float GetPreIQ(PFOC_Struct pFOC)
+{
+	return pFOC->iq;
+}
+/*************************************************************
 ** Function name:       SetCurrentPIDParams
 ** Descriptions:        设置电流环参数
 ** Input parameters:    pFOC：FOC对象指针

@@ -81,7 +81,18 @@ void SetSpeedPIDTar(PSpeedPIDControl_Struct pSpeedPID,float tar)
     pSpeedPID->sPID.tar = tar;
 }
 
-
+/*************************************************************
+** Function name:       GetSpeedPIDPre
+** Descriptions:        获取实际速度值
+** Input parameters:    pSpeedPID:结构体指针
+** Output parameters:   None
+** Returned value:      实际速度值
+** Remarks:             None
+*************************************************************/
+float GetSpeedPIDPre(PSpeedPIDControl_Struct pSpeedPID)
+{
+    return pSpeedPID->sPID.pre;
+}
 
 /*************************************************************
 ** Function name:       SetSpeedPIDEnable

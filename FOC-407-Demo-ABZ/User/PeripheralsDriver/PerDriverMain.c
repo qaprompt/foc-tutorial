@@ -3,6 +3,7 @@
 #include "main.h"
 //时间调度
 #include "Timer.h"
+#include "math.h"
 //LED
 #include "LEDConfig.h"
 //Motor1
@@ -49,7 +50,12 @@ void PerDriverMain_Init(void)
 uint8_t currentflag;
 uint8_t speedflag;
 uint8_t positionflag;
-int16_t angle = 0;
+float angle = 0;
+float star = 0.0;
+float spre;
+
+int ptar;
+float ppre;
 void PerDriverMain_Loop(void)
 {
 	//打印调试信息
@@ -98,15 +104,46 @@ void PerDriverMain_Loop(void)
 //			currentflag = 0;
 //		}
 //	)
-	//位置环应用
-	RUN_BY_LIMIT_BLOCK(1000,
+	//位置环应用-->时钟效果
+	RUN_BY_LIMIT_BLOCK(2000,
 		angle += 30;
 		if(angle >= 360) {
 			angle = 0;
 		}
 		Motor1PositionPIDConfigSetTar(180 - angle);
 		Motor2PositionPIDConfigSetTar(180 - angle);
-	)	
+	)
+//	//位置环应用-->力反馈
+//	RUN_BY_LIMIT_BLOCK(10,
+//		float iq;
+//		//Motor1PositionPIDConfigSetTar(180 - angle);
+//		iq = -Motor2GetPreIDIQ();
+//		Motor1SetTarIDIQ(0,iq);
+//		Motor2PositionPIDConfigSetTar(Motor1GetAngle() -  180);	
+//	)
+//	//旋转陀螺
+//	RUN_BY_LIMIT_BLOCK(50,
+//		spre = Motor2SpeedPIDConfigGetPre();
+//		printf("1:%f\r\n",spre);
+//		if ( fabs(star) < 0.01) {
+//			star = spre*2;
+//			
+//		} 
+//		if (fabs(spre) < 0.5) {
+//			star = 0;
+//		}
+//		Motor2SpeedPIDConfigSetTar(star);	
+//	)
+//	//多档开关
+//	RUN_BY_LIMIT_BLOCK(50,
+//		ppre = Motor1PositionPIDConfigGetPre();
+//		printf("2:%f\r\n",ppre);
+//		
+//		ptar = ppre / 30;
+//		ptar = ptar * 30;
+//		printf("3:%d\r\n",ptar);
+//		Motor1PositionPIDConfigSetTar(ptar);	
+//	)
 	LEDConfig_Loop();
 	Motor1SpeedPIDConfig_Loop();
 	Motor1PositionPIDConfig_Loop();

@@ -11,3 +11,4 @@ foc-407-demo\mcudrivermain.o: ..\User\MCUDriver\Motor2EncoderNVIC.h
 foc-407-demo\mcudrivermain.o: ..\User\MCUDriver\Timer.h
 foc-407-demo\mcudrivermain.o: D:\SoftWare\Keil\ARM\ARMCC\Bin\..\include\stdbool.h
 foc-407-demo\mcudrivermain.o: ..\User\MCUDriver\Uart1.h
+foc-407-demo\mcudrivermain.o: ..\User\MCUDriver\CAN1.h

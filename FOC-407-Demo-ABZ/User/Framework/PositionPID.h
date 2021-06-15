@@ -115,6 +115,7 @@ PositionPIDControl_Struct x = {                                                 
 void PositionPIDCycle(PPositionPIDControl_Struct pPositionPID);
 void SetPositionPIDParams(PPositionPIDControl_Struct pPositionPID,float kp,float ki,float kd);
 void SetPositionPIDTar(PPositionPIDControl_Struct pPositionPID,float tar);
+float GetPositionPIDPre(PPositionPIDControl_Struct pPositionPID);
 void SetPositionPIDEnable(PPositionPIDControl_Struct pPositionPID,float isEnable);
 void PositionPIDPrintf(PPositionPIDControl_Struct pPositionPID);
 

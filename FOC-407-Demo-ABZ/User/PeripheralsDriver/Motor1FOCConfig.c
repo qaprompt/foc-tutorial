@@ -92,6 +92,18 @@ void Motor1SetTarIDIQ(float id,float iq)
 	SetCurrentPIDTar(&gMotor1FOC,id,iq);
 }
 /*************************************************************
+** Function name:       Motor1GetPreIDIQ
+** Descriptions:        获取电机1实际电流
+** Input parameters:    None
+** Output parameters:   None
+** Returned value:      Q轴实际电流
+** Remarks:             None
+*************************************************************/
+float Motor1GetPreIDIQ(void)
+{
+	return GetPreIQ(&gMotor1FOC);
+}
+/*************************************************************
 ** Function name:       GetMotor1Angle
 ** Descriptions:        获取电机1机械角度
 ** Input parameters:    None

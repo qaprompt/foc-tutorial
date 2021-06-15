@@ -51,6 +51,7 @@
 "foc-407-demo\timer.o"
 "foc-407-demo\uart1.o"
 "foc-407-demo\ledgpio.o"
+"foc-407-demo\can1.o"
 "foc-407-demo\perdrivermain.o"
 "foc-407-demo\ledconfig.o"
 "foc-407-demo\motor1svpwmconfig.o"

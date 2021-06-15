@@ -18,6 +18,7 @@
 
 void Motor2PositionPIDConfig_Init(void);
 void Motor2PositionPIDConfigSetTar(float tarPosition);
+float Motor2PositionPIDConfigGetPre(void);
 void Motor2PositionPIDConfig_Loop(void);
 void Motor2PositionPIDConfig_Printf(void);
 
