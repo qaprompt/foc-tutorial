@@ -51,8 +51,8 @@ void MCUDriverMain_Loop(void)
 //		printf("3:%f\r\n",Motor1TIM2EncoderGetAngle());
 //		printf("4:%f\r\n",Motor2TIM4EncoderGetAngle());
 //	)
-//	RUN_BY_LIMIT_BLOCK(500,
-//		CAN_Test();
-//	)
+	RUN_BY_LIMIT_BLOCK(500,
+		CAN_Test();
+	)
 }
 

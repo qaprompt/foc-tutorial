@@ -35,13 +35,13 @@ static void CANFilterSet(CAN_HandleTypeDef* pCan,uint8_t masterID)
     //采用列表模式
     sFilterConfig.FilterMode = CAN_FILTERMODE_IDLIST;
     //采用32位掩码模式
-    sFilterConfig.FilterScale = CAN_FILTERSCALE_32BIT;
+    sFilterConfig.FilterScale = CAN_FILTERSCALE_16BIT;
     //采用FIFO0
     sFilterConfig.FilterFIFOAssignment = CAN_FILTER_FIFO0;
     //设置ID列表
-    sFilterConfig.FilterIdHigh = 0x0000;    
+    sFilterConfig.FilterIdHigh = masterID;    
     sFilterConfig.FilterIdLow = masterID;    
-    sFilterConfig.FilterMaskIdHigh = 0x0000;
+    sFilterConfig.FilterMaskIdHigh = masterID;
     sFilterConfig.FilterMaskIdLow = masterID; 
     //初始化过滤器
     if(HAL_CAN_ConfigFilter(pCan,&sFilterConfig) != HAL_OK) {
@@ -80,7 +80,7 @@ void CANSendData(uint8_t *data,uint8_t length)
     uint8_t message[8];
 	uint32_t txMailBox;
     gTxData.StdId = 0x1000;
-    gTxData.ExtId = 0x0000;
+    gTxData.ExtId = 0x1000;
     //标准帧
     gTxData.IDE = CAN_ID_STD;
     //数据帧
@@ -90,7 +90,7 @@ void CANSendData(uint8_t *data,uint8_t length)
 	memcpy(message,data,length);
     //发送
     HAL_CAN_AddTxMessage(&hcan1, &gTxData, message, &txMailBox);
-	while(HAL_CAN_GetTxMailboxesFreeLevel(&hcan1) != 3) {}
+	//while(HAL_CAN_GetTxMailboxesFreeLevel(&hcan1) != 3) {}
 }
 /*************************************************************
 ** Function name:       CANReceiveData
@@ -117,6 +117,21 @@ uint8_t CANReceiveData(uint8_t *data, uint8_t *length)
     return 0;
 }
 
+
+void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
+{
+	if(hcan->Instance==CAN1){
+		uint8_t rxData[8];
+		uint8_t rxLen = 0;
+		HAL_CAN_GetRxMessage(&hcan1,CAN_RX_FIFO0,&gRxData,rxData);//获取数据
+		rxLen = gTxData.DLC;
+		for(uint8_t i = 0; i < rxLen; i++){
+			printf("data[%d] = %c    ",i,rxData[i]);
+		}
+		printf("\r\n");
+		//HAL_CAN_ActivateNotification(hcan,CAN_IT_RX_FIFO0_MSG_PENDING);//再次开启接收中断
+	}
+}
 /*************************************************************
 ** Function name:       CAN_Test
 ** Descriptions:        CAN_测试
@@ -128,26 +143,13 @@ uint8_t CANReceiveData(uint8_t *data, uint8_t *length)
 void CAN_Test(void)
 {
     uint8_t txData[8];
-    txData[0] = 1;
-    txData[1] = 2;
-    txData[2] = 3;
-    txData[3] = 4;
-    txData[4] = 5;
-    txData[5] = 6;
-    txData[6] = 7;
-    txData[7] = 8;
-
-    uint8_t rxData[8];
-    uint8_t rxLen;
+    txData[0] = 'k';
+    txData[1] = 'y';
+    txData[2] = 's';
+    txData[3] = 'g';
+    txData[4] = 'd';
+    txData[5] = 's';
+    txData[6] = 'b';
+    txData[7] = '!';
     CANSendData(txData,8);
-    CANReceiveData(rxData,&rxLen);
-    if (rxLen == 0) {
-        return;
-    }
-    for(uint8_t i = 0; i < rxLen; i++){
-        printf("data[%d] = %d",i,rxData[i]);
-    }
-    printf("\r\n");
-
-
 }
