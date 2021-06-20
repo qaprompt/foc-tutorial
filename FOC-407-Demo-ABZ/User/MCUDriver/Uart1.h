@@ -17,7 +17,7 @@
 
 #define Uart1_RINGBUFLENGTH 500
 
-
+void Uart1_Init(void);
 void Uart1_IT_Handle(void);
 uint8_t Uart1_SendData(uint8_t *pData,uint16_t length);
 uint16_t Uart1_ReadData(uint8_t *pData,uint16_t length);

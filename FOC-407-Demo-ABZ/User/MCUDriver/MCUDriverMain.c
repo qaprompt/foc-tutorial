@@ -32,6 +32,7 @@ void MCUDriverMain_Init(void)
 	Motor1TIM2EncoderInit();
 	Motor2TIM4EncoderInit();
 	//Uart1_SendData(&data,1);
+	Uart1_Init();
 	CAN_Init();
 }
 

@@ -11,6 +11,20 @@ RingBuffer_EXPORT(gUart1_RX_RingBuffer,uint8_t,Uart1_RINGBUFLENGTH);
 RingBuffer_EXPORT(gUart1_TX_RingBuffer,uint8_t,Uart1_RINGBUFLENGTH);
 
 
+
+
+/*************************************************************
+** Function name:       Uart1_Init
+** Descriptions:        串口一初始化
+** Input parameters:    no
+** Output parameters:   no
+** min:                 no
+** Returned             no
+*************************************************************/
+void Uart1_Init(void)
+{
+	__HAL_UART_ENABLE_IT(&huart1,UART_IT_RXNE);
+}
 /*************************************************************
 ** Function name:       Uart1_IT_RxTxHandle
 ** Descriptions:        串口一中断服务函数
