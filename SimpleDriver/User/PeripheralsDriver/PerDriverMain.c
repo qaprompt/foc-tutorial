@@ -45,7 +45,7 @@ void PerDriverMain_Loop(void)
 	RUN_BY_LIMIT_BLOCK(10,
 		//FOCConfig_Printf();
 		//SpeedPIDConfig_Printf();
-		PositionPIDConfig_Printf();
+		//PositionPIDConfig_Printf();
 	)
 	
 	//改变转速

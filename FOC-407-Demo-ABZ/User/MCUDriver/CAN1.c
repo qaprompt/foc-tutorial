@@ -90,7 +90,7 @@ void CANSendData(uint8_t *data,uint8_t length)
 	memcpy(message,data,length);
     //发送
     HAL_CAN_AddTxMessage(&hcan1, &gTxData, message, &txMailBox);
-	//while(HAL_CAN_GetTxMailboxesFreeLevel(&hcan1) != 3) {}
+	while(HAL_CAN_GetTxMailboxesFreeLevel(&hcan1) != 3) {}
 }
 /*************************************************************
 ** Function name:       CANReceiveData
@@ -150,6 +150,6 @@ void CAN_Test(void)
     txData[4] = 'd';
     txData[5] = 's';
     txData[6] = 'b';
-    txData[7] = '!';
+    txData[7] = '1';
     CANSendData(txData,8);
 }

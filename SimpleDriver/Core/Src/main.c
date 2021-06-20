@@ -20,6 +20,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "adc.h"
+#include "can.h"
 #include "dma.h"
 #include "tim.h"
 #include "gpio.h"
@@ -89,9 +90,12 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_DMA_Init();
+  MX_ADC1_Init();
+  MX_ADC2_Init();
   MX_TIM1_Init();
   MX_TIM3_Init();
-  MX_ADC1_Init();
+  MX_CAN1_Init();
+
   /* USER CODE BEGIN 2 */
   APPMain_Init();
   /* USER CODE END 2 */

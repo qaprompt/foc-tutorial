@@ -6,6 +6,10 @@
 #include "timer.h"
 #include "MotorGPIO.h"
 #include "GPIONVIC.h"
+//系统电源
+#include "ADC2.h"
+//通讯
+#include "CAN1.h"
 /*************************************************************
 ** Function name:      MCUDriverMain_Init
 ** Descriptions:       芯片初始化
@@ -19,6 +23,8 @@ void MCUDriverMain_Init(void)
 {
 	TIM1_Init();
 	TimerEncoderInit();
+	ADC2_Init();
+	CAN_Init();
 }
 
 /*************************************************************
@@ -36,8 +42,12 @@ void MCUDriverMain_Loop(void)
 //	 	printf("1:%d\r\n",GetTimer3EncoderCnt());
 //	 	printf("2:%f\r\n",GetTimer3EncoderAngle());
 //	 )
-	
-
+	RUN_BY_LIMIT_BLOCK(500,
+		CAN_Test();
+	)
+	RUN_BY_LIMIT_BLOCK(100,
+		printf("1:%d\r\n",GetADC2Channel10Value());
+	)
 }
 
 

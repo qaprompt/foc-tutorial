@@ -27,7 +27,7 @@ struct SADC1_Struct gADC1 = {0};
 *************************************************************/
 void ADC1_Init(void)
 {
-	HAL_ADC_Start_DMA(&hadc1, (uint32_t*)gADC1.adDmaValue, 2);
+	HAL_ADC_Start_DMA(&hadc1, (uint32_t*)gADC1.adDmaValue, 3);
 }
 /*************************************************************
 ** Function name:       GetADC1ChannelXValue
