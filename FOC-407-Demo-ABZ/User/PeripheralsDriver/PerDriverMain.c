@@ -105,7 +105,7 @@ void PerDriverMain_Loop(void)
 //		}
 //	)
 	//位置环应用-->时钟效果
-	RUN_BY_LIMIT_BLOCK(2000,
+	RUN_BY_LIMIT_BLOCK(1000,
 		angle += 30;
 		if(angle >= 360) {
 			angle = 0;
@@ -118,7 +118,7 @@ void PerDriverMain_Loop(void)
 //		float iq;
 //		//Motor1PositionPIDConfigSetTar(180 - angle);
 //		iq = -Motor2GetPreIDIQ();
-//		Motor1SetTarIDIQ(0,iq);
+//		Motor1SetTarIDIQ(0,iq/5);
 //		Motor2PositionPIDConfigSetTar(Motor1GetAngle() -  180);	
 //	)
 //	//旋转陀螺
