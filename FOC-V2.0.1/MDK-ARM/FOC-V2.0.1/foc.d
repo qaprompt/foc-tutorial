@@ -1,0 +1,14 @@
+foc-v2.0.1\foc.o: ..\User\Framework\FOC.c
+foc-v2.0.1\foc.o: ..\User\Framework\FOC.h
+foc-v2.0.1\foc.o: D:\SoftWare\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+foc-v2.0.1\foc.o: ..\Drivers\CMSIS\DSP\Include\arm_math.h
+foc-v2.0.1\foc.o: ../Drivers/CMSIS/Include/core_cm4.h
+foc-v2.0.1\foc.o: ../Drivers/CMSIS/Include/cmsis_version.h
+foc-v2.0.1\foc.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+foc-v2.0.1\foc.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+foc-v2.0.1\foc.o: D:\SoftWare\Keil\ARM\ARMCC\Bin\..\include\string.h
+foc-v2.0.1\foc.o: D:\SoftWare\Keil\ARM\ARMCC\Bin\..\include\math.h
+foc-v2.0.1\foc.o: D:\SoftWare\Keil\ARM\ARMCC\Bin\..\include\stdio.h
+foc-v2.0.1\foc.o: ..\User\RTT\SEGGER_RTT.h
+foc-v2.0.1\foc.o: ..\User\RTT\SEGGER_RTT_Conf.h
+foc-v2.0.1\foc.o: ..\User\Framework\Svpwm.h

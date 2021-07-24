@@ -61,7 +61,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
             } else {
                 SetTimer3EncoderCnt(gEncoderCal.calibrationValue);
             }
-            printf("1:%d\r\n",gEncoderCal.calibrationValue);
+            //printf("1:%d\r\n",gEncoderCal.calibrationValue);
         }
 }
 
