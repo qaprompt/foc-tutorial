@@ -27,6 +27,9 @@
 #define LEDControl_h
 #include "stdint.h"
 
+
+extern volatile uint32_t gLED_TimeCNT;
+
 enum {
     LEDState_OFF = 0,
     LEDState_ON,
@@ -34,11 +37,11 @@ enum {
 };
 
 struct SLEDControl_Struct {
+    uint32_t startTime;
     uint8_t state;//LED运行状态 0:LED常灭 1:LED常亮 2:闪烁
     uint8_t onoff;//当前LED状态
-    float cycle;//闪烁周期(单位ms)
+    float cycle;//闪烁周期(单位s)
     uint8_t onLeave;//点亮电平
-    uint32_t startTime;
     void(*SetSYSLedLeave)(uint8_t leave);//设置LED引脚电平函数
 };
 typedef struct SLEDControl_Struct LEDControl_Struct;
@@ -63,10 +66,10 @@ LEDControl_Struct x = {              			\
 	.startTime = 0,                  			\
     .SetSYSLedLeave = xSetSYSLedLeave,     			\
 };
-extern volatile uint32_t gLED_TimeCNT;
+
 
 /*************************************************************
-** Function name:       SysPower_TIMEBASE
+** Function name:       LED_TIMEBASE
 ** Descriptions:        时基,放在周期为1ms的函数里面执行
 ** Input parameters:    None
 ** Output parameters:   None
@@ -76,7 +79,7 @@ extern volatile uint32_t gLED_TimeCNT;
         gLED_TimeCNT+= ms
 
 /*************************************************************
-** Function name:       SysPower_GETTIME
+** Function name:       LED_GETTIME
 ** Descriptions:        获取起始时间
 ** Input parameters:    None
 ** Output parameters:   None
@@ -86,7 +89,7 @@ extern volatile uint32_t gLED_TimeCNT;
     gLED_TimeCNT
 
 /*************************************************************
-** Function name:       SysPower_TIMEOUT
+** Function name:       LED_TIMEOUT
 ** Descriptions:        检查超时
 ** Input parameters:    timeOut：(uint32_t)超时时间
 **                      startTime:(uint32_t)开始的时间
@@ -97,6 +100,6 @@ extern volatile uint32_t gLED_TimeCNT;
     ((gLED_TimeCNT - startTime) >= timeOut ? 1 : 0)
 
 
-void SetLedStatus(PLEDControl_Struct gLED,uint8_t status,float cycle);
-void LEDRunCycle(PLEDControl_Struct gLED);
+void SetLedStatus(PLEDControl_Struct pLED,uint8_t status,float cycle);
+void LEDRunCycle(PLEDControl_Struct pLED);
 #endif /* LEDControl_h */

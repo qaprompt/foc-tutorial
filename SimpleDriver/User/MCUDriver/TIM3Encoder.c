@@ -90,5 +90,5 @@ float GetTimer3EncoderAngle(void)
     if (gSTTimerEncoder.angle < 0) {
         gSTTimerEncoder.angle = gSTTimerEncoder.angle + 360.0f;
     }
-    return -gSTTimerEncoder.angle;
+    return gSTTimerEncoder.angle;
 }

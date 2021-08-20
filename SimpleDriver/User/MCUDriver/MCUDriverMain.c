@@ -46,7 +46,7 @@ void MCUDriverMain_Loop(void)
 		CAN_Test();
 	)
 	RUN_BY_LIMIT_BLOCK(100,
-		printf("1:%d\r\n",GetADC2Channel10Value());
+		//printf("1:%d\r\n",GetADC2Channel10Value());
 	)
 }
 

@@ -77,6 +77,10 @@ static void GetMotorPreCurrent(float *ua,float *ub,float *uc)
 	*ua = -GetADC1ChannelXValue(0) * AD_TO_CURRENT * 1.5;
 	*ub = -GetADC1ChannelXValue(1) * AD_TO_CURRENT * 1.5;
 	*uc = -GetADC1ChannelXValue(2) * AD_TO_CURRENT * 1.5;
+	
+//	*ua = -GetADC1ChannelXValue(0);
+//	*ub = -GetADC1ChannelXValue(1);
+//	*uc = -GetADC1ChannelXValue(2);
 }
 
 //声明FOC对象

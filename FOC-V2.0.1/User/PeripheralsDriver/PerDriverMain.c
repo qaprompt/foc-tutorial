@@ -2,10 +2,12 @@
 #include "main.h"
 
 #include "LEDConfig.h"
-#include "SvpwmConfig.h"
+#include "KeyConfig.h"
+#include "OLEDConfig.h"
 #include "Timer.h"
-#include "FOCConfig.h"
 
+
+#include "FOCConfig.h"
 #include "SpeedPIDConfig.h"
 #include "PositionPIDConfig.h"
 /*************************************************************
@@ -21,10 +23,11 @@ void PerDriverMain_Init(void)
 {
 	HAL_Delay(2000);
 	LEDConfig_Init();
+	KeyConfig_Init();
 	FOCConfig_Init();
-	SpeedPIDConfig_Init();
-	PositionPIDConfig_Init();
-	
+//	SpeedPIDConfig_Init();
+//	PositionPIDConfig_Init();
+
 }
 
 /*************************************************************
@@ -40,11 +43,12 @@ int debugFlag = 0;
 float angle = 0;
 void PerDriverMain_Loop(void)
 {
+	
 	//打印调试信息
 	RUN_BY_LIMIT_BLOCK(10,
-		//FOCConfig_Printf();
+		FOCConfig_Printf();
 		//SpeedPIDConfig_Printf();
-		PositionPIDConfig_Printf();
+		//PositionPIDConfig_Printf();
 	)	
 	//3环调试
 	RUN_BY_LIMIT_BLOCK(4000,
@@ -69,11 +73,12 @@ void PerDriverMain_Loop(void)
 //		SetPositionPIDConfigTarPosition(180 - angle);
 //		SetPositionPIDConfigTarPosition(180 - angle);
 //	)
-	//速度闭环
-	SpeedPIDConfig_Loop();
-	//位置闭环
-	PositionPIDConfig_Loop();
+//	//速度闭环
+//	SpeedPIDConfig_Loop();
+//	//位置闭环
+//	PositionPIDConfig_Loop();
 	LEDConfig_Loop();
+	KeyConfig_Loop();
 }
 
 

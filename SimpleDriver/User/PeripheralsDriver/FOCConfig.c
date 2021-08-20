@@ -12,11 +12,11 @@
 #include "main.h"
 
 #define M_OUTMAX  12.0f * 0.577f
-#define M_KP  0.005f
-#define M_KI  0.005f
+#define M_KP  0.006f
+#define M_KI  0.008f
 #define M_KD  0.0f
 
-#define AD_TO_CURRENT 0.00201f
+#define AD_TO_CURRENT 0.00403f   //40倍 R005
 /*************************************************************
 ** Function name:       Motor1AngleCalibration
 ** Descriptions:        电机一角度校准
@@ -30,9 +30,9 @@ static void MotorAngleCalibration(void)
 	//1.使能电机
 	SetMotorEnable(1);
 	//2.电机旋转至a轴
-	SetTIM1Channel1HighLeaveTime_us(45);
+	SetTIM1Channel1HighLeaveTime_us(55);
 	SetTIM1Channel2HighLeaveTime_us(45);
-	SetTIM1Channel3HighLeaveTime_us(55);
+	SetTIM1Channel3HighLeaveTime_us(45);
 	HAL_Delay(500);
 	//3.读取角度
 	for (uint8_t i = 0; i < 10; i++) {
@@ -77,6 +77,10 @@ static void GetMotorPreCurrent(float *ua,float *ub,float *uc)
 	*ua = GetADC1ChannelXValue(0) * AD_TO_CURRENT * 1.5;
 	*ub = GetADC1ChannelXValue(1) * AD_TO_CURRENT * 1.5;
 	*uc = GetADC1ChannelXValue(2) * AD_TO_CURRENT * 1.5;
+	
+//	*ua = GetADC1ChannelXValue(0);
+//	*ub = GetADC1ChannelXValue(1);
+//	*uc = GetADC1ChannelXValue(2);
 }
 
 //声明FOC对象

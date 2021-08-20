@@ -68,9 +68,13 @@ void ADCDMAStart(void)
 *************************************************************/
 void ADCDMAIRQHandler(void)
 {
-	gADC1.adValue[0] = (int)gADC1.adDmaValue[0] - 2069;
-	gADC1.adValue[1] = (int)gADC1.adDmaValue[1] - 2009;
-	gADC1.adValue[2] = (int)gADC1.adDmaValue[2] - 1997;
+	gADC1.adValue[0] = (int)gADC1.adDmaValue[0] - 2013;
+	gADC1.adValue[1] = (int)gADC1.adDmaValue[1] - 1986;
+	gADC1.adValue[2] = (int)gADC1.adDmaValue[2] - 1978;
+	
+//	gADC1.adValue[0] = (int)gADC1.adDmaValue[0];
+//	gADC1.adValue[1] = (int)gADC1.adDmaValue[1];
+//	gADC1.adValue[2] = (int)gADC1.adDmaValue[2];
 }
 
 

@@ -28,6 +28,7 @@ foc-v2.0.1\perdrivermain.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ad
 foc-v2.0.1\perdrivermain.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h
 foc-v2.0.1\perdrivermain.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h
 foc-v2.0.1\perdrivermain.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h
+foc-v2.0.1\perdrivermain.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_crc.h
 foc-v2.0.1\perdrivermain.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h
 foc-v2.0.1\perdrivermain.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h
 foc-v2.0.1\perdrivermain.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
@@ -39,7 +40,8 @@ foc-v2.0.1\perdrivermain.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sp
 foc-v2.0.1\perdrivermain.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 foc-v2.0.1\perdrivermain.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 foc-v2.0.1\perdrivermain.o: ..\User\PeripheralsDriver\LEDConfig.h
-foc-v2.0.1\perdrivermain.o: ..\User\PeripheralsDriver\SvpwmConfig.h
+foc-v2.0.1\perdrivermain.o: ..\User\PeripheralsDriver\KeyConfig.h
+foc-v2.0.1\perdrivermain.o: ..\User\PeripheralsDriver\OLEDConfig.h
 foc-v2.0.1\perdrivermain.o: ..\User\MCUDriver\Timer.h
 foc-v2.0.1\perdrivermain.o: D:\SoftWare\Keil\ARM\ARMCC\Bin\..\include\stdbool.h
 foc-v2.0.1\perdrivermain.o: ..\User\PeripheralsDriver\FOCConfig.h

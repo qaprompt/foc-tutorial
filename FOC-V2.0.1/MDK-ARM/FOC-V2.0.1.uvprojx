@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F405xx,__FPU_PRESENT = 1U,ARM_MATH_CM4,__CC_ARM,__TARGET_FPU_VFP</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;         ../Drivers/STM32F4xx_HAL_Driver/Inc;         ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;         ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;         ../Drivers/CMSIS/Include;         ..\User\APP;         ..\User\Framework;         ..\User\Function;         ..\User\MCUDriver;         ..\User\PeripheralsDriver;         ..\User\RTT;         ..\Drivers\CMSIS\DSP\Include</IncludePath>
+              <IncludePath>../Core/Inc;   ../Drivers/STM32F4xx_HAL_Driver/Inc;   ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;   ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;   ../Drivers/CMSIS/Include;   ..\User\APP;   ..\User\Framework;   ..\User\Function;   ..\User\MCUDriver;   ..\User\PeripheralsDriver;   ..\User\RTT;   ..\Drivers\CMSIS\DSP\Include;   ..\StemWin\Config;   ..\StemWin\inc;   ..\StemWin\Lib;   ..\StemWin\OS;   ..\StemWin\UI</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -412,6 +412,62 @@
               <FileName>can.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/Src/can.c</FilePath>
+            </File>
+            <File>
+              <FileName>crc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/crc.c</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <UseCPPCompiler>2</UseCPPCompiler>
+                  <RVCTCodeConst>0</RVCTCodeConst>
+                  <RVCTZI>0</RVCTZI>
+                  <RVCTOtherData>0</RVCTOtherData>
+                  <ModuleSelection>0</ModuleSelection>
+                  <IncludeInBuild>1</IncludeInBuild>
+                  <AlwaysBuild>2</AlwaysBuild>
+                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
+                  <PublicsOnly>2</PublicsOnly>
+                  <StopOnExitCode>11</StopOnExitCode>
+                  <CustomArgument></CustomArgument>
+                  <IncludeLibraryModules></IncludeLibraryModules>
+                  <ComprImg>1</ComprImg>
+                </CommonProperty>
+                <FileArmAds>
+                  <Cads>
+                    <interw>2</interw>
+                    <Optim>0</Optim>
+                    <oTime>2</oTime>
+                    <SplitLS>2</SplitLS>
+                    <OneElfS>2</OneElfS>
+                    <Strict>2</Strict>
+                    <EnumInt>2</EnumInt>
+                    <PlainCh>2</PlainCh>
+                    <Ropi>2</Ropi>
+                    <Rwpi>2</Rwpi>
+                    <wLevel>0</wLevel>
+                    <uThumb>2</uThumb>
+                    <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <uGnu>2</uGnu>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
+                    <VariousControls>
+                      <MiscControls></MiscControls>
+                      <Define></Define>
+                      <Undefine></Undefine>
+                      <IncludePath></IncludePath>
+                    </VariousControls>
+                  </Cads>
+                </FileArmAds>
+              </FileOption>
             </File>
             <File>
               <FileName>dma.c</FileName>
@@ -585,6 +641,62 @@
               <FilePath>../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c</FilePath>
             </File>
             <File>
+              <FileName>stm32f4xx_hal_crc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.c</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <UseCPPCompiler>2</UseCPPCompiler>
+                  <RVCTCodeConst>0</RVCTCodeConst>
+                  <RVCTZI>0</RVCTZI>
+                  <RVCTOtherData>0</RVCTOtherData>
+                  <ModuleSelection>0</ModuleSelection>
+                  <IncludeInBuild>1</IncludeInBuild>
+                  <AlwaysBuild>2</AlwaysBuild>
+                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
+                  <PublicsOnly>2</PublicsOnly>
+                  <StopOnExitCode>11</StopOnExitCode>
+                  <CustomArgument></CustomArgument>
+                  <IncludeLibraryModules></IncludeLibraryModules>
+                  <ComprImg>1</ComprImg>
+                </CommonProperty>
+                <FileArmAds>
+                  <Cads>
+                    <interw>2</interw>
+                    <Optim>0</Optim>
+                    <oTime>2</oTime>
+                    <SplitLS>2</SplitLS>
+                    <OneElfS>2</OneElfS>
+                    <Strict>2</Strict>
+                    <EnumInt>2</EnumInt>
+                    <PlainCh>2</PlainCh>
+                    <Ropi>2</Ropi>
+                    <Rwpi>2</Rwpi>
+                    <wLevel>0</wLevel>
+                    <uThumb>2</uThumb>
+                    <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <uGnu>2</uGnu>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
+                    <VariousControls>
+                      <MiscControls></MiscControls>
+                      <Define></Define>
+                      <Undefine></Undefine>
+                      <IncludePath></IncludePath>
+                    </VariousControls>
+                  </Cads>
+                </FileArmAds>
+              </FileOption>
+            </File>
+            <File>
               <FileName>stm32f4xx_hal_i2c.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c</FilePath>
@@ -679,6 +791,16 @@
               <FileType>5</FileType>
               <FilePath>..\User\Function\FunctionMain.h</FilePath>
             </File>
+            <File>
+              <FileName>GUIFunc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Function\GUIFunc.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIFunc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\Function\GUIFunc.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -764,6 +886,26 @@
               <FileType>5</FileType>
               <FilePath>..\User\MCUDriver\ADC1.h</FilePath>
             </File>
+            <File>
+              <FileName>IIC1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\MCUDriver\IIC1.c</FilePath>
+            </File>
+            <File>
+              <FileName>IIC1.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\MCUDriver\IIC1.h</FilePath>
+            </File>
+            <File>
+              <FileName>KeyGpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\MCUDriver\KeyGpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>KeyGpio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\MCUDriver\KeyGpio.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -829,6 +971,26 @@
               <FileType>5</FileType>
               <FilePath>..\User\PeripheralsDriver\PositionPIDConfig.h</FilePath>
             </File>
+            <File>
+              <FileName>OLEDConfig.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\PeripheralsDriver\OLEDConfig.c</FilePath>
+            </File>
+            <File>
+              <FileName>OLEDConfig.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\PeripheralsDriver\OLEDConfig.h</FilePath>
+            </File>
+            <File>
+              <FileName>KeyConfig.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\PeripheralsDriver\KeyConfig.c</FilePath>
+            </File>
+            <File>
+              <FileName>KeyConfig.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\PeripheralsDriver\KeyConfig.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -883,6 +1045,66 @@
               <FileName>PositionPID.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\User\Framework\PositionPID.h</FilePath>
+            </File>
+            <File>
+              <FileName>OLED.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Framework\OLED.c</FilePath>
+            </File>
+            <File>
+              <FileName>OLED.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\Framework\OLED.h</FilePath>
+            </File>
+            <File>
+              <FileName>KeyScan.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Framework\KeyScan.c</FilePath>
+            </File>
+            <File>
+              <FileName>KeyScan.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\Framework\KeyScan.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>StemWin</GroupName>
+          <Files>
+            <File>
+              <FileName>STemWin532_CM4_Keil.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>..\StemWin\Lib\STemWin532_CM4_Keil.lib</FilePath>
+            </File>
+            <File>
+              <FileName>GUIConf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\StemWin\Config\GUIConf.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDRV_Template.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\StemWin\Config\GUIDRV_Template.c</FilePath>
+            </File>
+            <File>
+              <FileName>LCDConf_FlexColor_Template.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\StemWin\Config\LCDConf_FlexColor_Template.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUI_X.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\StemWin\OS\GUI_X.c</FilePath>
+            </File>
+            <File>
+              <FileName>Params.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\StemWin\UI\Params.c</FilePath>
+            </File>
+            <File>
+              <FileName>Logo.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\StemWin\UI\Logo.c</FilePath>
             </File>
           </Files>
         </Group>

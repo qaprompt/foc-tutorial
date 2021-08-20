@@ -11,4 +11,3 @@ foc-v2.0.1\foc.o: D:\SoftWare\Keil\ARM\ARMCC\Bin\..\include\math.h
 foc-v2.0.1\foc.o: D:\SoftWare\Keil\ARM\ARMCC\Bin\..\include\stdio.h
 foc-v2.0.1\foc.o: ..\User\RTT\SEGGER_RTT.h
 foc-v2.0.1\foc.o: ..\User\RTT\SEGGER_RTT_Conf.h
-foc-v2.0.1\foc.o: ..\User\Framework\Svpwm.h

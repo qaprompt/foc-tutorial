@@ -7,10 +7,10 @@
 
 
 //声明一个SVPWM对象
-SVPWM_EXPORT(gMotor,100.0f,80.0f,1.0f,12.0f,
-                SetTIM1Channel3HighLeaveTime_us,
-                SetTIM1Channel2HighLeaveTime_us,
+SVPWM_EXPORT(gMotor,100.0f,80.0f,1.0f,24.0f,
                 SetTIM1Channel1HighLeaveTime_us,
+                SetTIM1Channel2HighLeaveTime_us,
+                SetTIM1Channel3HighLeaveTime_us,
 				SetTIM1Channel4HighLeaveTime_us)
 
 

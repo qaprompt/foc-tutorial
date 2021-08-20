@@ -183,7 +183,7 @@ void FocContorl(PFOC_Struct pFOC)
     //2.做PID闭环
     CurrentPIControlID(pFOC);
     CurrentPIControlIQ(pFOC);
-	// pFOC->idPID.out = 0.0;
+	//pFOC->idPID.out = 0.0;
 	//pFOC->iqPID.out = 0.0;
     //3.计算输出值iα i贝塔
     ParkAntiTransform(pFOC);
@@ -257,6 +257,7 @@ void FOCPrintf(PFOC_Struct pFOC)
     printf("1:%f\r\n",pFOC->ia);
     printf("2:%f\r\n",pFOC->ib);
     printf("3:%f\r\n",pFOC->ic);
+	printf("4:%f\r\n",pFOC->angle);
 	printf("5:%f\r\n",pFOC->id);
     printf("6:%f\r\n",pFOC->iq);
 	//printf("7:%f\r\n",pFOC->tarid);

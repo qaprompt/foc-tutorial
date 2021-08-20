@@ -26,6 +26,7 @@ foc-v2.0.1\stm32f4xx_hal_i2c_ex.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx
 foc-v2.0.1\stm32f4xx_hal_i2c_ex.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h
 foc-v2.0.1\stm32f4xx_hal_i2c_ex.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h
 foc-v2.0.1\stm32f4xx_hal_i2c_ex.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h
+foc-v2.0.1\stm32f4xx_hal_i2c_ex.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_crc.h
 foc-v2.0.1\stm32f4xx_hal_i2c_ex.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h
 foc-v2.0.1\stm32f4xx_hal_i2c_ex.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h
 foc-v2.0.1\stm32f4xx_hal_i2c_ex.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h

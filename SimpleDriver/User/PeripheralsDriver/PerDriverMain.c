@@ -25,7 +25,7 @@ void PerDriverMain_Init(void)
 	FOCConfig_Init();
 	SpeedPIDConfig_Init();
 	PositionPIDConfig_Init();
-	
+//	
 }
 
 /*************************************************************
@@ -45,32 +45,32 @@ void PerDriverMain_Loop(void)
 	RUN_BY_LIMIT_BLOCK(10,
 		//FOCConfig_Printf();
 		//SpeedPIDConfig_Printf();
-		//PositionPIDConfig_Printf();
+		PositionPIDConfig_Printf();
 	)
 	
 	//改变转速
-//	RUN_BY_LIMIT_BLOCK(4000,
-//		if (debugFlag == 0) {
-//			debugFlag = 1;
-//			//SetTarIDIQ(0.1,0);
-//			//SetSpeedPIDConfigTarSpeed(0.02f);
-//			SetPositionPIDConfigTarPosition(90.0);
-//		} else if (debugFlag == 1){
-//			debugFlag = 0;
-//			//SetTarIDIQ(0.5,0);
-//			//SetSpeedPIDConfigTarSpeed(0.02f);
-//			SetPositionPIDConfigTarPosition(45.0);
-//		}
-//	)
-	//位置环应用
-	RUN_BY_LIMIT_BLOCK(10,
-		angle += 0.04;
-		if(angle >= 360) {
-			angle = 0;
+	RUN_BY_LIMIT_BLOCK(4000,
+		if (debugFlag == 0) {
+			debugFlag = 1;
+			//SetTarIDIQ(0.5,0.05);
+			//SetSpeedPIDConfigTarSpeed(5.0f);
+			SetPositionPIDConfigTarPosition(90.0);
+		} else if (debugFlag == 1){
+			debugFlag = 0;
+			//SetTarIDIQ(0.5,0.1);
+			//SetSpeedPIDConfigTarSpeed(1.0f);
+			SetPositionPIDConfigTarPosition(45.0);
 		}
-		SetPositionPIDConfigTarPosition(180 - angle);
-		SetPositionPIDConfigTarPosition(180 - angle);
 	)
+//	//位置环应用
+//	RUN_BY_LIMIT_BLOCK(10,
+//		angle += 0.04;
+//		if(angle >= 360) {
+//			angle = 0;
+//		}
+//		SetPositionPIDConfigTarPosition(180 - angle);
+//		SetPositionPIDConfigTarPosition(180 - angle);
+//	)
 	//速度闭环
 	SpeedPIDConfig_Loop();
 	//位置闭环

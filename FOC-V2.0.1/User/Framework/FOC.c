@@ -5,7 +5,6 @@
 #include "SEGGER_RTT.h"
 #include "SEGGER_RTT_Conf.h"
 
-#include "Svpwm.h"
 #define FOC_SQRT_3 1.73205f
 #define FOC_ANGLE_TO_RADIN 0.01745f
 
@@ -151,7 +150,7 @@ static void CurrentPIControlIQ(PFOC_Struct pFOC)
     pFOC->iqPID.out += pFOC->iqPID.kp * (pFOC->iqPID.bias - pFOC->iqPID.lastBias) + pFOC->iqPID.ki * pFOC->iqPID.bias;
     //保存偏差
     pFOC->iqPID.lastBias = pFOC->iqPID.bias;
-
+    //限幅
     if (pFOC->iqPID.out > fabs(pFOC->iqPID.outMax)) {
         pFOC->iqPID.out = fabs(pFOC->iqPID.outMax);
     }
@@ -183,8 +182,8 @@ void FocContorl(PFOC_Struct pFOC)
     //2.做PID闭环
     CurrentPIControlID(pFOC);
     CurrentPIControlIQ(pFOC);
-	//pFOC->idPID.out = 0.0;
-	//pFOC->iqPID.out = 0.0;
+	pFOC->idPID.out = 0.0;
+	pFOC->iqPID.out = 6.0;
     //3.计算输出值iα i贝塔
     ParkAntiTransform(pFOC);
     //4.输出SVPWM
@@ -257,9 +256,11 @@ void FOCPrintf(PFOC_Struct pFOC)
     printf("1:%f\r\n",pFOC->ia);
     printf("2:%f\r\n",pFOC->ib);
     printf("3:%f\r\n",pFOC->ic);
+	printf("4:%f\r\n",pFOC->angle);
 	printf("5:%f\r\n",pFOC->id);
     printf("6:%f\r\n",pFOC->iq);
-	//printf("7:%f\r\n",pFOC->tarid);
 	printf("7:%f\r\n",pFOC->tarid);
 	printf("8:%f\r\n",pFOC->tariq);
+	
 }
+

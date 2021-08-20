@@ -26,6 +26,8 @@
 //定时任务函数
 #include "Timer.h"
 #include "LEDControl.h"
+#include "KeyScan.h"
+#include "OLED.h"
 
 #include "ADC1.h"
 #include "FOCConfig.h"
@@ -195,6 +197,8 @@ void SysTick_Handler(void)
   /* USER CODE BEGIN SysTick_IRQn 0 */
 	MS_TIMEBASE(1);
 	LED_TIMEBASE(1);
+	KEY_TIMEBASE(1);
+	OLED_TIMEBASE(1);
 	SPEEDPID_TIMEBASE(1);
 	POSITIONPID_TIMEBASE(1);
   /* USER CODE END SysTick_IRQn 0 */

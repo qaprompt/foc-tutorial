@@ -5,6 +5,13 @@
 #include "FOCConfig.h"
 #include "TIM3Encoder.h"
 
+
+#define S_OUTMAX  200
+#define S_KP  0.5f
+#define S_KI  0.003f
+#define S_KD  0.0f
+
+
 float GetMotorPreSpeed(void)
 {
     static float angle = 0.0;
@@ -28,7 +35,7 @@ void  SetMotorCurrent(float current)
 }
 
 
-SPEED_PID_CONTROL_EXPORT(gSpeedPID,0.002,200,GetMotorPreSpeed,SetMotorCurrent)
+SPEED_PID_CONTROL_EXPORT(gSpeedPID,0.002,S_OUTMAX,GetMotorPreSpeed,SetMotorCurrent)
 
 
 
@@ -47,7 +54,7 @@ SPEED_PID_CONTROL_EXPORT(gSpeedPID,0.002,200,GetMotorPreSpeed,SetMotorCurrent)
 void SpeedPIDConfig_Init(void)
 {
     SetSpeedPIDEnable(&gSpeedPID,1);
-    SetSpeedPIDParams(&gSpeedPID,0.5f,0.005f,0.0f);
+    SetSpeedPIDParams(&gSpeedPID,S_KP,S_KI,S_KD);
     SetSpeedPIDTar(&gSpeedPID,0.0f);
 }
 
