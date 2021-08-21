@@ -44,6 +44,7 @@ foc-v2.0.1\stm32f4xx_it.o: D:\SoftWare\Keil\ARM\ARMCC\Bin\..\include\stdbool.h
 foc-v2.0.1\stm32f4xx_it.o: ..\User\Framework\LEDControl.h
 foc-v2.0.1\stm32f4xx_it.o: ..\User\Framework\KeyScan.h
 foc-v2.0.1\stm32f4xx_it.o: ..\User\Framework\OLED.h
+foc-v2.0.1\stm32f4xx_it.o: ..\User\Framework\PageGUI.h
 foc-v2.0.1\stm32f4xx_it.o: ..\User\MCUDriver\ADC1.h
 foc-v2.0.1\stm32f4xx_it.o: ..\User\PeripheralsDriver\FOCConfig.h
 foc-v2.0.1\stm32f4xx_it.o: ..\User\Framework\SpeedPID.h

@@ -16,7 +16,14 @@
 #include "DIALOG.h"
 
 
-WM_HWIN CreateParams(void);
+
 WM_HWIN CreateLogo(void);
+WM_HWIN CreateWave(void);
+WM_HWIN CreateAbout(void);
+WM_HWIN CreateAbout2(void);
+
+extern WM_HWIN About2Lisbox;
 
 #endif //__UI_H__
+
+

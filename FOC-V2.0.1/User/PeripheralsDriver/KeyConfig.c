@@ -4,10 +4,10 @@
 
 
 
-KEY_EXPORT(gKey_Up,0,0.01,3.0,0.01,ReadKeyUPLeave)
+KEY_EXPORT(gKey_Up,0,0.01,3.0,0.005,ReadKeyUPLeave)
 
 
-KEY_EXPORT(gKey_Down,0,0.01,3.0,0.01,ReadKeyDownLeave)
+KEY_EXPORT(gKey_Down,0,0.01,3.0,0.005,ReadKeyDownLeave)
 
 
 

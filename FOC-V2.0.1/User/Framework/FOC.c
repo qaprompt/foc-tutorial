@@ -182,8 +182,8 @@ void FocContorl(PFOC_Struct pFOC)
     //2.做PID闭环
     CurrentPIControlID(pFOC);
     CurrentPIControlIQ(pFOC);
-	pFOC->idPID.out = 0.0;
-	pFOC->iqPID.out = 6.0;
+//	pFOC->idPID.out = 0.0;
+//	pFOC->iqPID.out = 0.0;
     //3.计算输出值iα i贝塔
     ParkAntiTransform(pFOC);
     //4.输出SVPWM

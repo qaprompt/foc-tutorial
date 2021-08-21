@@ -3,6 +3,7 @@
 #include "Timer.h"
 //GUI功能函数
 #include "GUIFunc.h"
+
 /*************************************************************
 ** Function name:      FunctionMain_Init
 ** Descriptions:       功能初始化
@@ -14,7 +15,7 @@
 *************************************************************/
 void FunctionMain_Init(void)
 {
-    GUIFunc_Init();
+    //GUIFunc_Init();
 }
 
 /*************************************************************
@@ -28,10 +29,7 @@ void FunctionMain_Init(void)
 *************************************************************/
 void FunctionMain_Loop(void)
 {
-//    RUN_BY_LIMIT_BLOCK(30,
-//		//FUNC
-//	)  
-	GUIFunc_Loop();
+	//GUIFunc_Loop();
 }
 
 

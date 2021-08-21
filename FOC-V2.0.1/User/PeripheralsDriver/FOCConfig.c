@@ -31,7 +31,7 @@ static void MotorAngleCalibration(void)
 	SetMotorEnable(1);
 	//2.电机旋转至a轴
 	SetTIM1Channel1HighLeaveTime_us(60);
-	SetTIM1Channel2HighLeaveTime_us(60);
+	SetTIM1Channel2HighLeaveTime_us(40);
 	SetTIM1Channel3HighLeaveTime_us(40);
 	HAL_Delay(500);
 	//3.读取角度

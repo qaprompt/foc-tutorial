@@ -47,4 +47,7 @@ foc-v2.0.1\guifunc.o: ..\StemWin\inc\SPINBOX.h
 foc-v2.0.1\guifunc.o: ..\StemWin\inc\TEXT.h
 foc-v2.0.1\guifunc.o: ..\StemWin\inc\TREEVIEW.h
 foc-v2.0.1\guifunc.o: ..\StemWin\inc\KNOB.h
-foc-v2.0.1\guifunc.o: ..\User\PeripheralsDriver\OLEDConfig.h
+foc-v2.0.1\guifunc.o: ..\User\GUI\LogoPage.h
+foc-v2.0.1\guifunc.o: ..\User\GUI\WavePage.h
+foc-v2.0.1\guifunc.o: ..\User\GUI\AboutPage.h
+foc-v2.0.1\guifunc.o: ..\User\GUI\About2Page.h

@@ -71,8 +71,8 @@ static const GUI_WIDGET_CREATE_INFO _aDialogCreate[] = {
 *
 *       _cbDialog
 */
+WM_HWIN About2Lisbox;
 static void _cbDialog(WM_MESSAGE * pMsg) {
-  WM_HWIN hItem;
   int     NCode;
   int     Id;
   // USER START (Optionally insert additional variables)
@@ -83,11 +83,11 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
     //
     // Initialization of 'Listbox'
     //
-    hItem = WM_GetDialogItem(pMsg->hWin, ID_LISTBOX_0);
-    LISTBOX_AddString(hItem, "CANID: 1234");
-    LISTBOX_AddString(hItem, "VER:2.0.1");
-    LISTBOX_AddString(hItem, "Power:12V");
-    LISTBOX_SetFont(hItem, GUI_FONT_16B_1);
+    About2Lisbox = WM_GetDialogItem(pMsg->hWin, ID_LISTBOX_0);
+    LISTBOX_AddString(About2Lisbox, "CANID: 1234");
+    LISTBOX_AddString(About2Lisbox, "VER:2.0.1");
+    LISTBOX_AddString(About2Lisbox, "Power:12V");
+    LISTBOX_SetFont(About2Lisbox, GUI_FONT_16B_1);
     // USER START (Optionally insert additional code for further widget initialization)
     // USER END
     break;
@@ -136,9 +136,12 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
 *       CreateParams
 */
 
-WM_HWIN CreateParams(void) {
+WM_HWIN CreateAbout2(void) {
   WM_HWIN hWin;
-
+  LISTBOX_SetDefaultBkColor(LISTBOX_CI_SEL ,GUI_WHITE);
+	LISTBOX_SetDefaultBkColor(LISTBOX_CI_UNSEL ,GUI_BLACK);
+	LISTBOX_SetDefaultTextColor(LISTBOX_CI_SEL ,GUI_BLACK);
+	LISTBOX_SetDefaultTextColor(LISTBOX_CI_UNSEL ,GUI_WHITE);
   hWin = GUI_CreateDialogBox(_aDialogCreate, GUI_COUNTOF(_aDialogCreate), _cbDialog, WM_HBKWIN, 0, 0);
   return hWin;
 }

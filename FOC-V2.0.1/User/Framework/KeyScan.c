@@ -1,4 +1,8 @@
 #include "KeyScan.h"
+#include "stdio.h"
+#include "SEGGER_RTT.h"
+#include "SEGGER_RTT_Conf.h"
+
 
 volatile uint32_t gKEY_TimeCNT;
 
@@ -20,7 +24,7 @@ void KeyScan(PKey_Struct pKEY)
     if (leave == pKEY->effLeave) {
         pKEY->status = KEY_DOWN_STATUS;
         //按下的时候判断长按动作是否完成
-        pKEY->pressTime += pKEY->cycle;
+        pKEY->pressTime += pKEY->realCycleTime;
         //判断长按超标志，如果已经发生超时不再进一步判断
         if (pKEY->timeOutFlag == 1) {
             return;
@@ -43,7 +47,7 @@ void KeyScan(PKey_Struct pKEY)
         //清除长按超时标志
         pKEY->timeOutFlag = 0;
     }
-
+	printf("KeyEvent:%d\r\n",pKEY->event);
 }
 /*************************************************************
 ** Function name:       KEYRunCycle
@@ -56,6 +60,7 @@ void KeyScan(PKey_Struct pKEY)
 void KEYRunCycle(PKey_Struct pKEY)
 {
     if(KEY_TIMEOUT(pKEY->cycle * 1000,pKEY->startTime)) {
+		pKEY->realCycleTime = (KEY_GETTIME() - pKEY->startTime)/1000.0;
         pKEY->startTime = KEY_GETTIME();
         KeyScan(pKEY);
     }

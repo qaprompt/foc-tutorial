@@ -54,7 +54,7 @@ void PerDriverMain_Loop(void)
 			debugFlag = 1;
 			//SetTarIDIQ(0.5,0.05);
 			//SetSpeedPIDConfigTarSpeed(5.0f);
-			SetPositionPIDConfigTarPosition(90.0);
+			SetPositionPIDConfigTarPosition(135.0);
 		} else if (debugFlag == 1){
 			debugFlag = 0;
 			//SetTarIDIQ(0.5,0.1);

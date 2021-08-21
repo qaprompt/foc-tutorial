@@ -36,7 +36,7 @@ struct SKey_Struct {
 
     uint8_t timeOutFlag;            //长按超时标志
     uint8_t effLeave;               //有效电平
-
+	float realCycleTime;			//一个周期真正的时间
     float pressTime;                //按下的时间(单位:秒)
     float shortTime;                //短按时间(单位:秒)
     float longTime;                 //长按时间(单位:秒)
@@ -66,6 +66,7 @@ Key_Struct x = {                                                            \
     .status = 0,                                                            \
     .timeOutFlag = 0,                                                       \
     .effLeave = xeffLeave,                                                  \
+	.realCycleTime = 0,														\
     .pressTime = 0,                                                         \
     .shortTime = xshortTime,                                                \
     .longTime = xlongTime,                                                  \

@@ -4,7 +4,7 @@
 #include "SpeedPIDConfig.h"
 #include "TIM4Encoder.h"
 
-#define P_KP  0.035f
+#define P_KP  0.06f
 #define P_KI  0.00f
 #define P_KD  0.035f
 
@@ -12,7 +12,7 @@
 
 float GetMotorPosition(void)
 { 
-    return GetTimer4EncoderAngle()  -  180;
+    return GetTimer4EncoderAngle() - 180;
 }
 
 void SetMotorPosition(float position)

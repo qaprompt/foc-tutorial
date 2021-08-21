@@ -3,12 +3,13 @@
 #include "GUI.h"
 #include "UI.h"
 #include "DIALOG.h"
-//PLED驱动
-#include "OLEDConfig.h"
 
 
-
-
+//界面
+#include "LogoPage.h"
+#include "WavePage.h"
+#include "AboutPage.h"
+#include "About2Page.h"
 /*************************************************************
 ** Function name:      GUIFunc_Init
 ** Descriptions:       GUI功能初始化
@@ -20,11 +21,12 @@
 *************************************************************/
 void GUIFunc_Init(void)
 {
-    OLEDConfig_Init();
     GUI_Init();
 	GUI_Clear();
-    //CreateParams();
-    CreateLogo();
+	LogoPage_Init();
+    WavePage_Init();
+    AboutPage_Init();
+    About2Page_Init();
 	GUI_Exec();
 }
 
@@ -39,5 +41,8 @@ void GUIFunc_Init(void)
 *************************************************************/
 void GUIFunc_Loop(void)
 {
-	OLEDConfig_Loop();
+	LogoPage_Loop();
+    WavePage_Loop();
+    AboutPage_Loop();
+    About2Page_Loop();
 }
