@@ -307,7 +307,7 @@ Clark变换的目的在于三相变两相。
 - Id = Ia * cosθ + Ib * cos(θ - 2π/3) + Ic * cos(θ + 2π/3)
 - Iq = Ia * sinθ + Ib * sin(θ - 2π/3) + Ic * sin(θ + 2π/3)  
 
-![avatar](./Picture/park变换.png)
+![avatar](./Picture/Park变换.png)
 
 Park变换的目的在于静止变旋转。
 
