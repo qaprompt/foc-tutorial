@@ -304,8 +304,8 @@ U3 = sqrt(3) / 2 * Uα - Uβ/2
 Clark变换的目的在于三相变两相。
 
 ### Park变换
-Id = Ia * cosθ + Ib * cos(θ - 2π/3) + Ic * cos(θ + 2π/3)
-Iq = Ia * sinθ + Ib * sin(θ - 2π/3) + Ic * sin(θ + 2π/3)  
+- Id = Ia * cosθ + Ib * cos(θ - 2π/3) + Ic * cos(θ + 2π/3)
+- Iq = Ia * sinθ + Ib * sin(θ - 2π/3) + Ic * sin(θ + 2π/3)  
 
 ![avatar](./Picture/park变换.png)
 
